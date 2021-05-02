@@ -99,7 +99,7 @@ export const  routes = [
 // Frontend Route
 { path: '/', component: PublicHome },
 // { path: '/blog', component: PublicBlog }, 
-{ path: '/blog/:id', component: SingleBlog },
+{ path: '/post/:id', component: SingleBlog },
 { path: '/categories/:id', component: PublicHome }, 
 
   ]

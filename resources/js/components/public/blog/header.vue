@@ -6,7 +6,7 @@
         <div class="header_top">
           <div class="header_top_left">
             <ul class="top_nav">
-              <li><a href="index.html">Home</a></li>
+              <li><router-link to="/">Home</router-link></li>
               <li><a href="#">About</a></li>
               <li><a href="pages/contact.html">Contact</a></li>
             </ul>
@@ -31,7 +31,7 @@
       </div>
       <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav main_nav">
-          <li class="active"><a href="index.html"><span class="fa fa-home desktop-home"></span><span class="mobile-show">Home</span></a></li>
+          <li class="active"><router-link to="/"><span class="fa fa-home desktop-home"></span><span class="mobile-show">Home</span></router-link></li>
           <li><a href="#">Technology</a></li>
           <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Mobile</a>
             <ul class="dropdown-menu" role="menu">
@@ -55,7 +55,7 @@
       <div class="col-lg-12 col-md-12">
         <div class="latest_newsarea" style="height: 40px;"> <span style="background: #000;height: 40px;">Latest News</span>
           <ul id="ticker01" class="news_sticker">
-            <li v-for="(latest,index) in getlatestPost" v-if="index<11"style="font-size:15px"><a href="#"><img src="`upload/postimage/${latest.image}`" alt="">{{ latest.title | shortlength(90,".......")}}</a></li>
+            <li v-for="(argent,index) in getargentPost" v-if="index<4" style="font-size:15px"><router-link :to="`/post/${argent.slug}`"><img src="`upload/postimage/${argent.image}`" alt="">{{ argent.title | shortlength(90,".......")}}</router-link></li>
            
             
           </ul>
@@ -75,40 +75,7 @@
       </div>
     </div>
   </section>
-  <section id="sliderSection">
-    <div class="row">
-      <div class="col-lg-8 col-md-8 col-sm-8">
-        <div class="slick_slider">
-          <div class="single_iteam"> <a href="pages/single_page.html"> <img src="images/slider_img4.jpg" alt=""></a>
-            <div class="slider_article">
-              <h2><a class="slider_tittle" href="pages/single_page.html">Fusce eu nulla semper porttitor felis sit amet</a></h2>
-              <p>Nunc tincidunt, elit non cursus euismod, lacus augue ornare metus, egestas imperdiet nulla nisl quis mauris. Suspendisse a pharetra urna. Morbi dui...</p>
-            </div>
-          </div>
-        
-        
-        
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-4 col-sm-4">
-        <div class="latest_post">
-          <h2><span>Latest post</span></h2>
-          <div class="latest_post_container">
-            <div id="prev-button"><i class="fa fa-chevron-up"></i></div>
-            <ul class="latest_postnav">
-              <li v-for="(latest,index) in getlatestPost" v-if="index<11">
-                <div class="media"> <a href="pages/single_page.html" class="media-left"> <img alt="" :src="`upload/postimage/${latest.image}`"> </a>
-                  <div class="media-body"> <a href="pages/single_page.html" class="catg_title"> {{ latest.title | shortlength(90,".......") }}</a> </div>
-                </div>
-              </li>
-              
-            </ul>
-            <div id="next-button"><i class="fa  fa-chevron-down"></i></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+ 
 
 
  

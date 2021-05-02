@@ -69,6 +69,8 @@
                           <option value="">Select Featured</option>
                            <option value="argent">Argent</option>
                             <option value="slider">Slider</option>
+                            <!-- <option value="argent">Argent</option>
+                            <option value="slider">Slider</option> -->
                     </select>
                          <div class="text-danger" v-if = "errors && errors.featured">{{errors.featured[0] }}</div>
                           </div>

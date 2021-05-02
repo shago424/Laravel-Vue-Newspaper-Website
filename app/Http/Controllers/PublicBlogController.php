@@ -26,13 +26,13 @@ class PublicBlogController extends Controller
 
      public function argentPost()
     {
-      $argentposts = Post::with('user','category','subcategory')->where('category_id','42')->orderBy('id','DESC')->get();
+      $argentposts = Post::with('user','category','subcategory')->where('featured','argent')->orderBy('id','DESC')->get();
       return response()->json(['argentPosts'=>$argentposts],200);
     }
 
      public function sliderPost()
     {
-      $sliderposts = Post::with('user','category','subcategory')->where('category_id','41')->orderBy('id','DESC')->get();
+      $sliderposts = Post::with('user','category','subcategory')->where('featured','slider')->orderBy('id','DESC')->get();
       return response()->json(['sliderPosts'=>$sliderposts],200);
     }
 
@@ -69,10 +69,10 @@ class PublicBlogController extends Controller
 
 
 
-     public function singlepostById($id)
+     public function singlepostById($slug)
     {
 
-      $singlePost = Post::with('user','category','subcategory')->where('id',$id)->first();
+      $singlePost = Post::with('user','category','subcategory')->where('slug',$slug)->first();
       return response()->json(['singlePost'=>$singlePost],200);
     }
 

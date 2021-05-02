@@ -28,7 +28,7 @@ Route::get('/sportsPost', 'PublicBlogController@sportsPost')->name('sportsPost')
 Route::get('/gjPost', 'PublicBlogController@gjPost')->name('gjPost');
 Route::get('/pjPost', 'PublicBlogController@pjPost')->name('pjPost');
 
-Route::get('/singlePost/{id}', 'PublicBlogController@singlepostById')->name('singlepost');
+Route::get('/singlePost/{slug}', 'PublicBlogController@singlepostById')->name('singlepost');
 Route::get('/categoryIdByPost/{id}', 'PublicBlogController@categoryIdByPost')->name('categoryIdByPost');
 Route::get('/SearchPost/', 'PublicBlogController@SearchPost')->name('SearchPost');
 Route::get('/latestPost', 'PublicBlogController@latestPost')->name('latestpost');

@@ -4064,6 +4064,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
     // From Category List
@@ -5969,6 +5971,7 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _blog_BlogSidebar_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./blog/BlogSidebar.vue */ "./resources/js/components/public/blog/BlogSidebar.vue");
 /* harmony import */ var _blog_header_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./blog/header.vue */ "./resources/js/components/public/blog/header.vue");
+/* harmony import */ var _blog_slider_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./blog/slider.vue */ "./resources/js/components/public/blog/slider.vue");
 //
 //
 //
@@ -6168,60 +6171,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -6233,7 +6183,8 @@ __webpack_require__.r(__webpack_exports__);
   },
   components: {
     BlogSidebar: _blog_BlogSidebar_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
-    Header: _blog_header_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+    Header: _blog_header_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
+    Slider: _blog_slider_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
   },
   mounted: function mounted() {
     this.$store.dispatch('getschoolCollege');
@@ -6251,7 +6202,7 @@ __webpack_require__.r(__webpack_exports__);
       return this.$store.getters.latestPost;
     },
     getnuPost: function getnuPost() {
-      return this.$store.getters.puPost;
+      return this.$store.getters.nuPost;
     },
     getsportsPost: function getsportsPost() {
       return this.$store.getters.sportsPost;
@@ -6629,21 +6580,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "publicsidebar",
@@ -6686,7 +6622,8 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-var _name$data$mounted$co;
+/* harmony import */ var _header_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./header.vue */ "./resources/js/components/public/blog/header.vue");
+var _name$components$data;
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
@@ -6883,83 +6820,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-/* harmony default export */ __webpack_exports__["default"] = (_name$data$mounted$co = {
+
+/* harmony default export */ __webpack_exports__["default"] = (_name$components$data = {
   name: "singlePost",
+  components: {
+    Header: _header_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
+  },
   data: function data() {
     return {
       id: ""
@@ -6983,13 +6849,13 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       this.$store.dispatch('getsinglePostbyId', this.$route.params.id);
     }
   }
-}, _defineProperty(_name$data$mounted$co, "mounted", function mounted() {
+}, _defineProperty(_name$components$data, "mounted", function mounted() {
   this.singlePost();
-}), _defineProperty(_name$data$mounted$co, "watch", {
+}), _defineProperty(_name$components$data, "watch", {
   $route: function $route(to, from) {
     this.singlePost();
   }
-}), _name$data$mounted$co);
+}), _name$components$data);
 
 /***/ }),
 
@@ -7004,39 +6870,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
 /* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -7146,6 +6979,95 @@ __webpack_require__.r(__webpack_exports__);
     },
     getargentPost: function getargentPost() {
       return this.$store.getters.argentPost;
+    },
+    getsliderPost: function getsliderPost() {
+      return this.$store.getters.sliderPost;
+    }
+  },
+  methods: {
+    RealSearch: lodash__WEBPACK_IMPORTED_MODULE_0___default.a.debounce(function () {
+      this.$store.dispatch('SearchPost', this.keyword);
+    }, 1000)
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/public/blog/slider.vue?vue&type=script&lang=js&":
+/*!*****************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/public/blog/slider.vue?vue&type=script&lang=js& ***!
+  \*****************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: "slider",
+  data: function data() {
+    return {
+      keyword: ''
+    };
+  },
+  mounted: function mounted() {
+    this.$store.dispatch('getCategoryList');
+    this.$store.dispatch('getlatestPost');
+    this.$store.dispatch('getsliderPost');
+  },
+  computed: {
+    getCategoryList: function getCategoryList() {
+      return this.$store.getters.categoryList;
+    },
+    getlatestPost: function getlatestPost() {
+      return this.$store.getters.latestPost;
     },
     getsliderPost: function getsliderPost() {
       return this.$store.getters.sliderPost;
@@ -77846,6 +77768,8 @@ var render = function() {
     [
       _c("Header"),
       _vm._v(" "),
+      _c("Slider"),
+      _vm._v(" "),
       _c("section", { attrs: { id: "contentSection" } }, [
         _c(
           "div",
@@ -77871,7 +77795,7 @@ var render = function() {
                                     "router-link",
                                     {
                                       staticClass: "media-left",
-                                      attrs: { to: "/blog/" + sclist.id }
+                                      attrs: { to: "/post/" + sclist.slug }
                                     },
                                     [
                                       _c("img", {
@@ -77892,7 +77816,7 @@ var render = function() {
                                         "router-link",
                                         {
                                           staticClass: "catg_title",
-                                          attrs: { to: "/blog/" + sclist.id }
+                                          attrs: { to: "/post/" + sclist.slug }
                                         },
                                         [
                                           _vm._v(
@@ -77923,13 +77847,288 @@ var render = function() {
                   ])
                 ]),
                 _vm._v(" "),
-                _vm._m(2),
+                _c("div", { staticClass: "col-md-6" }, [
+                  _c("div", { staticClass: "single_sidebar" }, [
+                    _vm._m(2),
+                    _vm._v(" "),
+                    _c(
+                      "ul",
+                      { staticClass: "spost_nav" },
+                      _vm._l(_vm.getnuPost, function(nu, index) {
+                        return index < 5
+                          ? _c("li", [
+                              _c(
+                                "div",
+                                { staticClass: "media wow fadeInDown" },
+                                [
+                                  _c(
+                                    "router-link",
+                                    {
+                                      staticClass: "media-left",
+                                      attrs: { to: "/post/" + nu.slug }
+                                    },
+                                    [
+                                      _c("img", {
+                                        attrs: {
+                                          alt: "",
+                                          src: "upload/postimage/" + nu.image
+                                        }
+                                      })
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "div",
+                                    { staticClass: "media-body" },
+                                    [
+                                      _c(
+                                        "router-link",
+                                        {
+                                          staticClass: "catg_title",
+                                          attrs: { to: "/post/" + nu.slug }
+                                        },
+                                        [
+                                          _vm._v(
+                                            " " +
+                                              _vm._s(
+                                                _vm._f("shortlength")(
+                                                  nu.title,
+                                                  90,
+                                                  "......."
+                                                )
+                                              )
+                                          )
+                                        ]
+                                      )
+                                    ],
+                                    1
+                                  )
+                                ],
+                                1
+                              )
+                            ])
+                          : _vm._e()
+                      }),
+                      0
+                    ),
+                    _vm._v(" "),
+                    _vm._m(3)
+                  ])
+                ]),
                 _vm._v(" "),
-                _vm._m(3),
+                _c("div", { staticClass: "fashion_technology_area" }, [
+                  _c("div", { staticClass: "fashion" }, [
+                    _c("div", { staticClass: "single_post_content" }, [
+                      _vm._m(4),
+                      _vm._v(" "),
+                      _c(
+                        "ul",
+                        { staticClass: "spost_nav" },
+                        _vm._l(_vm.getgjPost, function(gj, index) {
+                          return index < 5
+                            ? _c("li", [
+                                _c(
+                                  "div",
+                                  { staticClass: "media wow fadeInDown" },
+                                  [
+                                    _c(
+                                      "router-link",
+                                      {
+                                        staticClass: "media-left",
+                                        attrs: { to: "/post/" + gj.slug }
+                                      },
+                                      [
+                                        _c("img", {
+                                          attrs: {
+                                            alt: "",
+                                            src: "upload/postimage/" + gj.image
+                                          }
+                                        })
+                                      ]
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      { staticClass: "media-body" },
+                                      [
+                                        _c(
+                                          "router-link",
+                                          {
+                                            staticClass: "catg_title",
+                                            attrs: { to: "/post/" + gj.slug }
+                                          },
+                                          [
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(
+                                                  _vm._f("shortlength")(
+                                                    gj.title,
+                                                    90,
+                                                    "......."
+                                                  )
+                                                )
+                                            )
+                                          ]
+                                        )
+                                      ],
+                                      1
+                                    )
+                                  ],
+                                  1
+                                )
+                              ])
+                            : _vm._e()
+                        }),
+                        0
+                      ),
+                      _vm._v(" "),
+                      _vm._m(5)
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "technology" }, [
+                    _c("div", { staticClass: "single_post_content" }, [
+                      _vm._m(6),
+                      _vm._v(" "),
+                      _c(
+                        "ul",
+                        { staticClass: "spost_nav" },
+                        _vm._l(_vm.getpjPost, function(pj, index) {
+                          return index < 5
+                            ? _c("li", [
+                                _c(
+                                  "div",
+                                  { staticClass: "media wow fadeInDown" },
+                                  [
+                                    _c(
+                                      "router-link",
+                                      {
+                                        staticClass: "media-left",
+                                        attrs: { to: "/post/" + pj.slug }
+                                      },
+                                      [
+                                        _c("img", {
+                                          attrs: {
+                                            alt: "",
+                                            src: "upload/postimage/" + pj.image
+                                          }
+                                        })
+                                      ]
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      { staticClass: "media-body" },
+                                      [
+                                        _c(
+                                          "router-link",
+                                          {
+                                            staticClass: "catg_title",
+                                            attrs: { to: "/post/" + pj.slug }
+                                          },
+                                          [
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(
+                                                  _vm._f("shortlength")(
+                                                    pj.title,
+                                                    90,
+                                                    "......."
+                                                  )
+                                                )
+                                            )
+                                          ]
+                                        )
+                                      ],
+                                      1
+                                    )
+                                  ],
+                                  1
+                                )
+                              ])
+                            : _vm._e()
+                        }),
+                        0
+                      ),
+                      _vm._v(" "),
+                      _vm._m(7)
+                    ])
+                  ])
+                ]),
                 _vm._v(" "),
-                _vm._m(4),
+                _c("div", { staticClass: "single_post_content" }, [
+                  _vm._m(8),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "single_post_content_left" }),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "single_post_content_right" }, [
+                    _c(
+                      "ul",
+                      { staticClass: "spost_nav" },
+                      _vm._l(_vm.getsportsPost, function(sports, index) {
+                        return index < 5
+                          ? _c("li", [
+                              _c(
+                                "div",
+                                { staticClass: "media wow fadeInDown" },
+                                [
+                                  _c(
+                                    "router-link",
+                                    {
+                                      staticClass: "media-left",
+                                      attrs: { to: "/post/" + sports.slug }
+                                    },
+                                    [
+                                      _c("img", {
+                                        attrs: {
+                                          alt: "",
+                                          src:
+                                            "upload/postimage/" + sports.image
+                                        }
+                                      })
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "div",
+                                    { staticClass: "media-body" },
+                                    [
+                                      _c(
+                                        "router-link",
+                                        {
+                                          staticClass: "catg_title",
+                                          attrs: { to: "/post/" + sports.slug }
+                                        },
+                                        [
+                                          _vm._v(
+                                            " " +
+                                              _vm._s(
+                                                _vm._f("shortlength")(
+                                                  sports.title,
+                                                  90,
+                                                  "......."
+                                                )
+                                              )
+                                          )
+                                        ]
+                                      )
+                                    ],
+                                    1
+                                  )
+                                ],
+                                1
+                              )
+                            ])
+                          : _vm._e()
+                      }),
+                      0
+                    ),
+                    _vm._v(" "),
+                    _vm._m(9)
+                  ])
+                ]),
                 _vm._v(" "),
-                _vm._m(5)
+                _vm._m(10)
               ])
             ]),
             _vm._v(" "),
@@ -77968,607 +78167,84 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-md-6" }, [
-      _c("div", { staticClass: "single_sidebar" }, [
-        _c("h2", [_c("span", [_vm._v("National University")])]),
-        _vm._v(" "),
-        _c("ul", { staticClass: "spost_nav" }, [
-          _c("li", [
-            _c("div", { staticClass: "media wow fadeInDown" }, [
-              _c(
-                "a",
-                {
-                  staticClass: "media-left",
-                  attrs: { href: "pages/single_page.html" }
-                },
-                [_c("img", { attrs: { alt: "", src: "images/post_img1.jpg" } })]
-              ),
-              _vm._v(" "),
-              _c("div", { staticClass: "media-body" }, [
-                _c(
-                  "a",
-                  {
-                    staticClass: "catg_title",
-                    attrs: { href: "pages/single_page.html" }
-                  },
-                  [_vm._v(" Aliquam malesuada diam eget turpis varius 1")]
-                )
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("li", [
-            _c("div", { staticClass: "media wow fadeInDown" }, [
-              _c(
-                "a",
-                {
-                  staticClass: "media-left",
-                  attrs: { href: "pages/single_page.html" }
-                },
-                [_c("img", { attrs: { alt: "", src: "images/post_img2.jpg" } })]
-              ),
-              _vm._v(" "),
-              _c("div", { staticClass: "media-body" }, [
-                _c(
-                  "a",
-                  {
-                    staticClass: "catg_title",
-                    attrs: { href: "pages/single_page.html" }
-                  },
-                  [_vm._v(" Aliquam malesuada diam eget turpis varius 2")]
-                )
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("li", [
-            _c("div", { staticClass: "media wow fadeInDown" }, [
-              _c(
-                "a",
-                {
-                  staticClass: "media-left",
-                  attrs: { href: "pages/single_page.html" }
-                },
-                [_c("img", { attrs: { alt: "", src: "images/post_img1.jpg" } })]
-              ),
-              _vm._v(" "),
-              _c("div", { staticClass: "media-body" }, [
-                _c(
-                  "a",
-                  {
-                    staticClass: "catg_title",
-                    attrs: { href: "pages/single_page.html" }
-                  },
-                  [_vm._v(" Aliquam malesuada diam eget turpis varius 3")]
-                )
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("li", [
-            _c("div", { staticClass: "media wow fadeInDown" }, [
-              _c(
-                "a",
-                {
-                  staticClass: "media-left",
-                  attrs: { href: "pages/single_page.html" }
-                },
-                [_c("img", { attrs: { alt: "", src: "images/post_img2.jpg" } })]
-              ),
-              _vm._v(" "),
-              _c("div", { staticClass: "media-body" }, [
-                _c(
-                  "a",
-                  {
-                    staticClass: "catg_title",
-                    attrs: { href: "pages/single_page.html" }
-                  },
-                  [_vm._v(" Aliquam malesuada diam eget turpis varius 4")]
-                )
-              ])
-            ])
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", [
-          _c(
-            "a",
-            {
-              staticClass: "btn btn-primary pull-right",
-              attrs: { href: "pages/single_page.html" }
-            },
-            [_vm._v("More Post")]
-          )
-        ])
-      ])
+    return _c("h2", [_c("span", [_vm._v("National University")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", [
+      _c(
+        "a",
+        {
+          staticClass: "btn btn-primary pull-right",
+          attrs: { href: "pages/single_page.html" }
+        },
+        [_vm._v("More Post")]
+      )
     ])
   },
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "fashion_technology_area" }, [
-      _c("div", { staticClass: "fashion" }, [
-        _c("div", { staticClass: "single_post_content" }, [
-          _c("h2", [_c("span", [_vm._v("Govt. Job")])]),
-          _vm._v(" "),
-          _c("ul", { staticClass: "business_catgnav wow fadeInDown" }, [
-            _c("li", [
-              _c("figure", { staticClass: "bsbig_fig" }, [
-                _c(
-                  "a",
-                  {
-                    staticClass: "featured_img",
-                    attrs: { href: "pages/single_page.html" }
-                  },
-                  [
-                    _c("img", {
-                      attrs: { alt: "", src: "images/featured_img2.jpg" }
-                    }),
-                    _vm._v(" "),
-                    _c("span", { staticClass: "overlay" })
-                  ]
-                ),
-                _vm._v(" "),
-                _c("figcaption", [
-                  _c("a", { attrs: { href: "pages/single_page.html" } }, [
-                    _vm._v("Proin rhoncus consequat nisl eu ornare mauris")
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("p", [
-                  _vm._v(
-                    "Nunc tincidunt, elit non cursus euismod, lacus augue ornare metus, egestas imperdiet nulla nisl quis mauris. Suspendisse a phare..."
-                  )
-                ])
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("ul", { staticClass: "spost_nav" }, [
-            _c("li", [
-              _c("div", { staticClass: "media wow fadeInDown" }, [
-                _c(
-                  "a",
-                  {
-                    staticClass: "media-left",
-                    attrs: { href: "pages/single_page.html" }
-                  },
-                  [
-                    _c("img", {
-                      attrs: { alt: "", src: "images/post_img1.jpg" }
-                    })
-                  ]
-                ),
-                _vm._v(" "),
-                _c("div", { staticClass: "media-body" }, [
-                  _c(
-                    "a",
-                    {
-                      staticClass: "catg_title",
-                      attrs: { href: "pages/single_page.html" }
-                    },
-                    [_vm._v(" Aliquam malesuada diam eget turpis varius 1")]
-                  )
-                ])
-              ])
-            ]),
-            _vm._v(" "),
-            _c("li", [
-              _c("div", { staticClass: "media wow fadeInDown" }, [
-                _c(
-                  "a",
-                  {
-                    staticClass: "media-left",
-                    attrs: { href: "pages/single_page.html" }
-                  },
-                  [
-                    _c("img", {
-                      attrs: { alt: "", src: "images/post_img2.jpg" }
-                    })
-                  ]
-                ),
-                _vm._v(" "),
-                _c("div", { staticClass: "media-body" }, [
-                  _c(
-                    "a",
-                    {
-                      staticClass: "catg_title",
-                      attrs: { href: "pages/single_page.html" }
-                    },
-                    [_vm._v(" Aliquam malesuada diam eget turpis varius 2")]
-                  )
-                ])
-              ])
-            ]),
-            _vm._v(" "),
-            _c("li", [
-              _c("div", { staticClass: "media wow fadeInDown" }, [
-                _c(
-                  "a",
-                  {
-                    staticClass: "media-left",
-                    attrs: { href: "pages/single_page.html" }
-                  },
-                  [
-                    _c("img", {
-                      attrs: { alt: "", src: "images/post_img1.jpg" }
-                    })
-                  ]
-                ),
-                _vm._v(" "),
-                _c("div", { staticClass: "media-body" }, [
-                  _c(
-                    "a",
-                    {
-                      staticClass: "catg_title",
-                      attrs: { href: "pages/single_page.html" }
-                    },
-                    [_vm._v(" Aliquam malesuada diam eget turpis varius 3")]
-                  )
-                ])
-              ])
-            ]),
-            _vm._v(" "),
-            _c("li", [
-              _c("div", { staticClass: "media wow fadeInDown" }, [
-                _c(
-                  "a",
-                  {
-                    staticClass: "media-left",
-                    attrs: { href: "pages/single_page.html" }
-                  },
-                  [
-                    _c("img", {
-                      attrs: { alt: "", src: "images/post_img2.jpg" }
-                    })
-                  ]
-                ),
-                _vm._v(" "),
-                _c("div", { staticClass: "media-body" }, [
-                  _c(
-                    "a",
-                    {
-                      staticClass: "catg_title",
-                      attrs: { href: "pages/single_page.html" }
-                    },
-                    [_vm._v(" Aliquam malesuada diam eget turpis varius 4")]
-                  )
-                ])
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", [
-            _c(
-              "a",
-              {
-                staticClass: "btn btn-primary pull-right",
-                attrs: { href: "pages/single_page.html" }
-              },
-              [_vm._v("More Post")]
-            )
-          ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "technology" }, [
-        _c("div", { staticClass: "single_post_content" }, [
-          _c("h2", [_c("span", [_vm._v("Private Job")])]),
-          _vm._v(" "),
-          _c("ul", { staticClass: "business_catgnav" }, [
-            _c("li", [
-              _c("figure", { staticClass: "bsbig_fig wow fadeInDown" }, [
-                _c(
-                  "a",
-                  {
-                    staticClass: "featured_img",
-                    attrs: { href: "pages/single_page.html" }
-                  },
-                  [
-                    _c("img", {
-                      attrs: { alt: "", src: "images/featured_img3.jpg" }
-                    }),
-                    _vm._v(" "),
-                    _c("span", { staticClass: "overlay" })
-                  ]
-                ),
-                _vm._v(" "),
-                _c("figcaption", [
-                  _c("a", { attrs: { href: "pages/single_page.html" } }, [
-                    _vm._v("Proin rhoncus consequat nisl eu ornare mauris")
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("p", [
-                  _vm._v(
-                    "Nunc tincidunt, elit non cursus euismod, lacus augue ornare metus, egestas imperdiet nulla nisl quis mauris. Suspendisse a phare..."
-                  )
-                ])
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("ul", { staticClass: "spost_nav" }, [
-            _c("li", [
-              _c("div", { staticClass: "media wow fadeInDown" }, [
-                _c(
-                  "a",
-                  {
-                    staticClass: "media-left",
-                    attrs: { href: "pages/single_page.html" }
-                  },
-                  [
-                    _c("img", {
-                      attrs: { alt: "", src: "images/post_img1.jpg" }
-                    })
-                  ]
-                ),
-                _vm._v(" "),
-                _c("div", { staticClass: "media-body" }, [
-                  _c(
-                    "a",
-                    {
-                      staticClass: "catg_title",
-                      attrs: { href: "pages/single_page.html" }
-                    },
-                    [_vm._v(" Aliquam malesuada diam eget turpis varius 1")]
-                  )
-                ])
-              ])
-            ]),
-            _vm._v(" "),
-            _c("li", [
-              _c("div", { staticClass: "media wow fadeInDown" }, [
-                _c(
-                  "a",
-                  {
-                    staticClass: "media-left",
-                    attrs: { href: "pages/single_page.html" }
-                  },
-                  [
-                    _c("img", {
-                      attrs: { alt: "", src: "images/post_img2.jpg" }
-                    })
-                  ]
-                ),
-                _vm._v(" "),
-                _c("div", { staticClass: "media-body" }, [
-                  _c(
-                    "a",
-                    {
-                      staticClass: "catg_title",
-                      attrs: { href: "pages/single_page.html" }
-                    },
-                    [_vm._v(" Aliquam malesuada diam eget turpis varius 2")]
-                  )
-                ])
-              ])
-            ]),
-            _vm._v(" "),
-            _c("li", [
-              _c("div", { staticClass: "media wow fadeInDown" }, [
-                _c(
-                  "a",
-                  {
-                    staticClass: "media-left",
-                    attrs: { href: "pages/single_page.html" }
-                  },
-                  [
-                    _c("img", {
-                      attrs: { alt: "", src: "images/post_img1.jpg" }
-                    })
-                  ]
-                ),
-                _vm._v(" "),
-                _c("div", { staticClass: "media-body" }, [
-                  _c(
-                    "a",
-                    {
-                      staticClass: "catg_title",
-                      attrs: { href: "pages/single_page.html" }
-                    },
-                    [_vm._v(" Aliquam malesuada diam eget turpis varius 3")]
-                  )
-                ])
-              ])
-            ]),
-            _vm._v(" "),
-            _c("li", [
-              _c("div", { staticClass: "media wow fadeInDown" }, [
-                _c(
-                  "a",
-                  {
-                    staticClass: "media-left",
-                    attrs: { href: "pages/single_page.html" }
-                  },
-                  [
-                    _c("img", {
-                      attrs: { alt: "", src: "images/post_img2.jpg" }
-                    })
-                  ]
-                ),
-                _vm._v(" "),
-                _c("div", { staticClass: "media-body" }, [
-                  _c(
-                    "a",
-                    {
-                      staticClass: "catg_title",
-                      attrs: { href: "pages/single_page.html" }
-                    },
-                    [_vm._v(" Aliquam malesuada diam eget turpis varius 4")]
-                  )
-                ])
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", [
-            _c(
-              "a",
-              {
-                staticClass: "btn btn-primary pull-right",
-                attrs: { href: "pages/single_page.html" }
-              },
-              [_vm._v("More Post")]
-            )
-          ])
-        ])
-      ])
+    return _c("h2", [_c("span", [_vm._v("Govt. Job")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", [
+      _c(
+        "a",
+        {
+          staticClass: "btn btn-primary pull-right",
+          attrs: { href: "pages/single_page.html" }
+        },
+        [_vm._v("More Post")]
+      )
     ])
   },
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "single_post_content" }, [
-      _c("h2", [_c("span", [_vm._v("Sports News")])]),
-      _vm._v(" "),
-      _c("div", { staticClass: "single_post_content_left" }, [
-        _c("ul", { staticClass: "business_catgnav" }, [
-          _c("li", [
-            _c("figure", { staticClass: "bsbig_fig  wow fadeInDown" }, [
-              _c(
-                "a",
-                {
-                  staticClass: "featured_img",
-                  attrs: { href: "pages/single_page.html" }
-                },
-                [
-                  _c("img", {
-                    attrs: { src: "images/featured_img1.jpg", alt: "" }
-                  }),
-                  _vm._v(" "),
-                  _c("span", { staticClass: "overlay" })
-                ]
-              ),
-              _vm._v(" "),
-              _c("figcaption", [
-                _c("a", { attrs: { href: "pages/single_page.html" } }, [
-                  _vm._v("Proin rhoncus consequat nisl eu ornare mauris")
-                ])
-              ]),
-              _vm._v(" "),
-              _c("p", [
-                _vm._v(
-                  "Nunc tincidunt, elit non cursus euismod, lacus augue ornare metus, egestas imperdiet nulla nisl quis mauris. Suspendisse a phare..."
-                )
-              ])
-            ])
-          ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "single_post_content_right" }, [
-        _c("ul", { staticClass: "spost_nav" }, [
-          _c("li", [
-            _c("div", { staticClass: "media wow fadeInDown" }, [
-              _c(
-                "a",
-                {
-                  staticClass: "media-left",
-                  attrs: { href: "pages/single_page.html" }
-                },
-                [_c("img", { attrs: { alt: "", src: "images/post_img1.jpg" } })]
-              ),
-              _vm._v(" "),
-              _c("div", { staticClass: "media-body" }, [
-                _c(
-                  "a",
-                  {
-                    staticClass: "catg_title",
-                    attrs: { href: "pages/single_page.html" }
-                  },
-                  [_vm._v(" Aliquam malesuada diam eget turpis varius 1")]
-                )
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("li", [
-            _c("div", { staticClass: "media wow fadeInDown" }, [
-              _c(
-                "a",
-                {
-                  staticClass: "media-left",
-                  attrs: { href: "pages/single_page.html" }
-                },
-                [_c("img", { attrs: { alt: "", src: "images/post_img2.jpg" } })]
-              ),
-              _vm._v(" "),
-              _c("div", { staticClass: "media-body" }, [
-                _c(
-                  "a",
-                  {
-                    staticClass: "catg_title",
-                    attrs: { href: "pages/single_page.html" }
-                  },
-                  [_vm._v(" Aliquam malesuada diam eget turpis varius 2")]
-                )
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("li", [
-            _c("div", { staticClass: "media wow fadeInDown" }, [
-              _c(
-                "a",
-                {
-                  staticClass: "media-left",
-                  attrs: { href: "pages/single_page.html" }
-                },
-                [_c("img", { attrs: { alt: "", src: "images/post_img1.jpg" } })]
-              ),
-              _vm._v(" "),
-              _c("div", { staticClass: "media-body" }, [
-                _c(
-                  "a",
-                  {
-                    staticClass: "catg_title",
-                    attrs: { href: "pages/single_page.html" }
-                  },
-                  [_vm._v(" Aliquam malesuada diam eget turpis varius 3")]
-                )
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("li", [
-            _c("div", { staticClass: "media wow fadeInDown" }, [
-              _c(
-                "a",
-                {
-                  staticClass: "media-left",
-                  attrs: { href: "pages/single_page.html" }
-                },
-                [_c("img", { attrs: { alt: "", src: "images/post_img2.jpg" } })]
-              ),
-              _vm._v(" "),
-              _c("div", { staticClass: "media-body" }, [
-                _c(
-                  "a",
-                  {
-                    staticClass: "catg_title",
-                    attrs: { href: "pages/single_page.html" }
-                  },
-                  [_vm._v(" Aliquam malesuada diam eget turpis varius 4")]
-                )
-              ])
-            ])
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", [
-          _c(
-            "a",
-            {
-              staticClass: "btn btn-primary pull-right",
-              attrs: { href: "pages/single_page.html" }
-            },
-            [_vm._v("More Post")]
-          )
-        ])
-      ])
+    return _c("h2", [_c("span", [_vm._v("Private Job")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", [
+      _c(
+        "a",
+        {
+          staticClass: "btn btn-primary pull-right",
+          attrs: { href: "pages/single_page.html" }
+        },
+        [_vm._v("More Post")]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("h2", [_c("span", [_vm._v("Sports News")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", [
+      _c(
+        "a",
+        {
+          staticClass: "btn btn-primary pull-right",
+          attrs: { href: "pages/single_page.html" }
+        },
+        [_vm._v("More Post")]
+      )
     ])
   },
   function() {
@@ -78914,19 +78590,173 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", { attrs: { id: "publicsidebar" } }, [
+    _c("div", { staticClass: "col-lg-4 col-md-4 col-sm-4" }, [
+      _c("aside", { staticClass: "right_content" }, [
+        _c("div", { staticClass: "single_sidebar" }, [
+          _vm._m(0),
+          _vm._v(" "),
+          _c(
+            "ul",
+            { staticClass: "spost_nav" },
+            _vm._l(_vm.getpuPost, function(pu, index) {
+              return index < 5
+                ? _c("li", [
+                    _c(
+                      "div",
+                      { staticClass: "media wow fadeInDown" },
+                      [
+                        _c(
+                          "router-link",
+                          {
+                            staticClass: "media-left",
+                            attrs: { to: "/post/" + pu.slug }
+                          },
+                          [
+                            _c("img", {
+                              attrs: {
+                                alt: "",
+                                src: "upload/postimage/" + pu.image
+                              }
+                            })
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          { staticClass: "media-body" },
+                          [
+                            _c(
+                              "router-link",
+                              {
+                                staticClass: "catg_title",
+                                attrs: { to: "/post/" + pu.slug }
+                              },
+                              [
+                                _vm._v(
+                                  " " +
+                                    _vm._s(
+                                      _vm._f("shortlength")(
+                                        pu.title,
+                                        90,
+                                        "......."
+                                      )
+                                    )
+                                )
+                              ]
+                            )
+                          ],
+                          1
+                        )
+                      ],
+                      1
+                    )
+                  ])
+                : _vm._e()
+            }),
+            0
+          ),
+          _vm._v(" "),
+          _vm._m(1)
+        ]),
+        _vm._v(" "),
+        _vm._m(2),
+        _vm._v(" "),
+        _vm._m(3),
+        _vm._v(" "),
+        _vm._m(4),
+        _vm._v(" "),
+        _vm._m(5),
+        _vm._v(" "),
+        _vm._m(6),
+        _vm._v(" "),
+        _vm._m(7)
+      ])
+    ])
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { attrs: { id: "publicsidebar" } }, [
-      _c("div", { staticClass: "col-lg-4 col-md-4 col-sm-4" }, [
-        _c("aside", { staticClass: "right_content" }, [
-          _c("div", { staticClass: "single_sidebar" }, [
-            _c("h2", [_c("span", [_vm._v("Public University")])]),
-            _vm._v(" "),
+    return _c("h2", [_c("span", [_vm._v("Public University")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", [
+      _c(
+        "a",
+        {
+          staticClass: "btn btn-primary pull-right",
+          attrs: { href: "pages/single_page.html" }
+        },
+        [_vm._v("More Post")]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "single_sidebar" }, [
+      _c("ul", { staticClass: "nav nav-tabs", attrs: { role: "tablist" } }, [
+        _c("li", { staticClass: "active", attrs: { role: "presentation" } }, [
+          _c(
+            "a",
+            {
+              attrs: {
+                href: "#category",
+                "aria-controls": "home",
+                role: "tab",
+                "data-toggle": "tab"
+              }
+            },
+            [_vm._v("Admission")]
+          )
+        ]),
+        _vm._v(" "),
+        _c("li", { attrs: { role: "presentation" } }, [
+          _c(
+            "a",
+            {
+              attrs: {
+                href: "#video",
+                "aria-controls": "profile",
+                role: "tab",
+                "data-toggle": "tab"
+              }
+            },
+            [_vm._v("Exam")]
+          )
+        ]),
+        _vm._v(" "),
+        _c("li", { attrs: { role: "presentation" } }, [
+          _c(
+            "a",
+            {
+              attrs: {
+                href: "#comments",
+                "aria-controls": "messages",
+                role: "tab",
+                "data-toggle": "tab"
+              }
+            },
+            [_vm._v("Result")]
+          )
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "tab-content" }, [
+        _c(
+          "div",
+          {
+            staticClass: "tab-pane active",
+            attrs: { role: "tabpanel", id: "category" }
+          },
+          [
             _c("ul", { staticClass: "spost_nav" }, [
               _c("li", [
                 _c("div", { staticClass: "media wow fadeInDown" }, [
@@ -79051,1459 +78881,838 @@ var staticRenderFns = [
                 [_vm._v("More Post")]
               )
             ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "single_sidebar" }, [
-            _c(
-              "ul",
-              { staticClass: "nav nav-tabs", attrs: { role: "tablist" } },
-              [
-                _c(
-                  "li",
-                  { staticClass: "active", attrs: { role: "presentation" } },
-                  [
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "tab-pane", attrs: { role: "tabpanel", id: "video" } },
+          [
+            _c("div", { staticClass: "vide_area" }, [
+              _c("ul", { staticClass: "spost_nav" }, [
+                _c("li", [
+                  _c("div", { staticClass: "media wow fadeInDown" }, [
                     _c(
                       "a",
                       {
-                        attrs: {
-                          href: "#category",
-                          "aria-controls": "home",
-                          role: "tab",
-                          "data-toggle": "tab"
-                        }
-                      },
-                      [_vm._v("Admission")]
-                    )
-                  ]
-                ),
-                _vm._v(" "),
-                _c("li", { attrs: { role: "presentation" } }, [
-                  _c(
-                    "a",
-                    {
-                      attrs: {
-                        href: "#video",
-                        "aria-controls": "profile",
-                        role: "tab",
-                        "data-toggle": "tab"
-                      }
-                    },
-                    [_vm._v("Exam")]
-                  )
-                ]),
-                _vm._v(" "),
-                _c("li", { attrs: { role: "presentation" } }, [
-                  _c(
-                    "a",
-                    {
-                      attrs: {
-                        href: "#comments",
-                        "aria-controls": "messages",
-                        role: "tab",
-                        "data-toggle": "tab"
-                      }
-                    },
-                    [_vm._v("Result")]
-                  )
-                ])
-              ]
-            ),
-            _vm._v(" "),
-            _c("div", { staticClass: "tab-content" }, [
-              _c(
-                "div",
-                {
-                  staticClass: "tab-pane active",
-                  attrs: { role: "tabpanel", id: "category" }
-                },
-                [
-                  _c("ul", { staticClass: "spost_nav" }, [
-                    _c("li", [
-                      _c("div", { staticClass: "media wow fadeInDown" }, [
-                        _c(
-                          "a",
-                          {
-                            staticClass: "media-left",
-                            attrs: { href: "pages/single_page.html" }
-                          },
-                          [
-                            _c("img", {
-                              attrs: { alt: "", src: "images/post_img1.jpg" }
-                            })
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "media-body" }, [
-                          _c(
-                            "a",
-                            {
-                              staticClass: "catg_title",
-                              attrs: { href: "pages/single_page.html" }
-                            },
-                            [
-                              _vm._v(
-                                " Aliquam malesuada diam eget turpis varius 1"
-                              )
-                            ]
-                          )
-                        ])
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _c("div", { staticClass: "media wow fadeInDown" }, [
-                        _c(
-                          "a",
-                          {
-                            staticClass: "media-left",
-                            attrs: { href: "pages/single_page.html" }
-                          },
-                          [
-                            _c("img", {
-                              attrs: { alt: "", src: "images/post_img2.jpg" }
-                            })
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "media-body" }, [
-                          _c(
-                            "a",
-                            {
-                              staticClass: "catg_title",
-                              attrs: { href: "pages/single_page.html" }
-                            },
-                            [
-                              _vm._v(
-                                " Aliquam malesuada diam eget turpis varius 2"
-                              )
-                            ]
-                          )
-                        ])
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _c("div", { staticClass: "media wow fadeInDown" }, [
-                        _c(
-                          "a",
-                          {
-                            staticClass: "media-left",
-                            attrs: { href: "pages/single_page.html" }
-                          },
-                          [
-                            _c("img", {
-                              attrs: { alt: "", src: "images/post_img1.jpg" }
-                            })
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "media-body" }, [
-                          _c(
-                            "a",
-                            {
-                              staticClass: "catg_title",
-                              attrs: { href: "pages/single_page.html" }
-                            },
-                            [
-                              _vm._v(
-                                " Aliquam malesuada diam eget turpis varius 3"
-                              )
-                            ]
-                          )
-                        ])
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _c("div", { staticClass: "media wow fadeInDown" }, [
-                        _c(
-                          "a",
-                          {
-                            staticClass: "media-left",
-                            attrs: { href: "pages/single_page.html" }
-                          },
-                          [
-                            _c("img", {
-                              attrs: { alt: "", src: "images/post_img2.jpg" }
-                            })
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "media-body" }, [
-                          _c(
-                            "a",
-                            {
-                              staticClass: "catg_title",
-                              attrs: { href: "pages/single_page.html" }
-                            },
-                            [
-                              _vm._v(
-                                " Aliquam malesuada diam eget turpis varius 4"
-                              )
-                            ]
-                          )
-                        ])
-                      ])
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", [
-                    _c(
-                      "a",
-                      {
-                        staticClass: "btn btn-primary pull-right",
+                        staticClass: "media-left",
                         attrs: { href: "pages/single_page.html" }
                       },
-                      [_vm._v("More Post")]
-                    )
-                  ])
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass: "tab-pane",
-                  attrs: { role: "tabpanel", id: "video" }
-                },
-                [
-                  _c("div", { staticClass: "vide_area" }, [
-                    _c("ul", { staticClass: "spost_nav" }, [
-                      _c("li", [
-                        _c("div", { staticClass: "media wow fadeInDown" }, [
-                          _c(
-                            "a",
-                            {
-                              staticClass: "media-left",
-                              attrs: { href: "pages/single_page.html" }
-                            },
-                            [
-                              _c("img", {
-                                attrs: { alt: "", src: "images/post_img1.jpg" }
-                              })
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "media-body" }, [
-                            _c(
-                              "a",
-                              {
-                                staticClass: "catg_title",
-                                attrs: { href: "pages/single_page.html" }
-                              },
-                              [
-                                _vm._v(
-                                  " Aliquam malesuada diam eget turpis varius 1"
-                                )
-                              ]
-                            )
-                          ])
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("li", [
-                        _c("div", { staticClass: "media wow fadeInDown" }, [
-                          _c(
-                            "a",
-                            {
-                              staticClass: "media-left",
-                              attrs: { href: "pages/single_page.html" }
-                            },
-                            [
-                              _c("img", {
-                                attrs: { alt: "", src: "images/post_img2.jpg" }
-                              })
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "media-body" }, [
-                            _c(
-                              "a",
-                              {
-                                staticClass: "catg_title",
-                                attrs: { href: "pages/single_page.html" }
-                              },
-                              [
-                                _vm._v(
-                                  " Aliquam malesuada diam eget turpis varius 2"
-                                )
-                              ]
-                            )
-                          ])
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("li", [
-                        _c("div", { staticClass: "media wow fadeInDown" }, [
-                          _c(
-                            "a",
-                            {
-                              staticClass: "media-left",
-                              attrs: { href: "pages/single_page.html" }
-                            },
-                            [
-                              _c("img", {
-                                attrs: { alt: "", src: "images/post_img1.jpg" }
-                              })
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "media-body" }, [
-                            _c(
-                              "a",
-                              {
-                                staticClass: "catg_title",
-                                attrs: { href: "pages/single_page.html" }
-                              },
-                              [
-                                _vm._v(
-                                  " Aliquam malesuada diam eget turpis varius 3"
-                                )
-                              ]
-                            )
-                          ])
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("li", [
-                        _c("div", { staticClass: "media wow fadeInDown" }, [
-                          _c(
-                            "a",
-                            {
-                              staticClass: "media-left",
-                              attrs: { href: "pages/single_page.html" }
-                            },
-                            [
-                              _c("img", {
-                                attrs: { alt: "", src: "images/post_img2.jpg" }
-                              })
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "media-body" }, [
-                            _c(
-                              "a",
-                              {
-                                staticClass: "catg_title",
-                                attrs: { href: "pages/single_page.html" }
-                              },
-                              [
-                                _vm._v(
-                                  " Aliquam malesuada diam eget turpis varius 4"
-                                )
-                              ]
-                            )
-                          ])
-                        ])
-                      ])
-                    ]),
+                      [
+                        _c("img", {
+                          attrs: { alt: "", src: "images/post_img1.jpg" }
+                        })
+                      ]
+                    ),
                     _vm._v(" "),
-                    _c("div", [
+                    _c("div", { staticClass: "media-body" }, [
                       _c(
                         "a",
                         {
-                          staticClass: "btn btn-primary pull-right",
+                          staticClass: "catg_title",
                           attrs: { href: "pages/single_page.html" }
                         },
-                        [_vm._v("More Post")]
+                        [_vm._v(" Aliquam malesuada diam eget turpis varius 1")]
                       )
                     ])
                   ])
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass: "tab-pane",
-                  attrs: { role: "tabpanel", id: "comments" }
-                },
-                [
-                  _c("ul", { staticClass: "spost_nav" }, [
-                    _c("li", [
-                      _c("div", { staticClass: "media wow fadeInDown" }, [
-                        _c(
-                          "a",
-                          {
-                            staticClass: "media-left",
-                            attrs: { href: "pages/single_page.html" }
-                          },
-                          [
-                            _c("img", {
-                              attrs: { alt: "", src: "images/post_img1.jpg" }
-                            })
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "media-body" }, [
-                          _c(
-                            "a",
-                            {
-                              staticClass: "catg_title",
-                              attrs: { href: "pages/single_page.html" }
-                            },
-                            [
-                              _vm._v(
-                                " Aliquam malesuada diam eget turpis varius 1"
-                              )
-                            ]
-                          )
-                        ])
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _c("div", { staticClass: "media wow fadeInDown" }, [
-                        _c(
-                          "a",
-                          {
-                            staticClass: "media-left",
-                            attrs: { href: "pages/single_page.html" }
-                          },
-                          [
-                            _c("img", {
-                              attrs: { alt: "", src: "images/post_img2.jpg" }
-                            })
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "media-body" }, [
-                          _c(
-                            "a",
-                            {
-                              staticClass: "catg_title",
-                              attrs: { href: "pages/single_page.html" }
-                            },
-                            [
-                              _vm._v(
-                                " Aliquam malesuada diam eget turpis varius 2"
-                              )
-                            ]
-                          )
-                        ])
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _c("div", { staticClass: "media wow fadeInDown" }, [
-                        _c(
-                          "a",
-                          {
-                            staticClass: "media-left",
-                            attrs: { href: "pages/single_page.html" }
-                          },
-                          [
-                            _c("img", {
-                              attrs: { alt: "", src: "images/post_img1.jpg" }
-                            })
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "media-body" }, [
-                          _c(
-                            "a",
-                            {
-                              staticClass: "catg_title",
-                              attrs: { href: "pages/single_page.html" }
-                            },
-                            [
-                              _vm._v(
-                                " Aliquam malesuada diam eget turpis varius 3"
-                              )
-                            ]
-                          )
-                        ])
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _c("div", { staticClass: "media wow fadeInDown" }, [
-                        _c(
-                          "a",
-                          {
-                            staticClass: "media-left",
-                            attrs: { href: "pages/single_page.html" }
-                          },
-                          [
-                            _c("img", {
-                              attrs: { alt: "", src: "images/post_img2.jpg" }
-                            })
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "media-body" }, [
-                          _c(
-                            "a",
-                            {
-                              staticClass: "catg_title",
-                              attrs: { href: "pages/single_page.html" }
-                            },
-                            [
-                              _vm._v(
-                                " Aliquam malesuada diam eget turpis varius 4"
-                              )
-                            ]
-                          )
-                        ])
-                      ])
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", [
-                    _c(
-                      "a",
-                      {
-                        staticClass: "btn btn-primary pull-right",
-                        attrs: { href: "pages/single_page.html" }
-                      },
-                      [_vm._v("More Post")]
-                    )
-                  ])
-                ]
-              )
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "single_sidebar" }, [
-            _c(
-              "ul",
-              { staticClass: "nav nav-tabs", attrs: { role: "tablist" } },
-              [
-                _c(
-                  "li",
-                  { staticClass: "active", attrs: { role: "presentation" } },
-                  [
-                    _c(
-                      "a",
-                      {
-                        attrs: {
-                          href: "#category1",
-                          "aria-controls": "home",
-                          role: "tab",
-                          "data-toggle": "tab"
-                        }
-                      },
-                      [_vm._v("Stipend")]
-                    )
-                  ]
-                ),
-                _vm._v(" "),
-                _c("li", { attrs: { role: "presentation" } }, [
-                  _c(
-                    "a",
-                    {
-                      attrs: {
-                        href: "#video1",
-                        "aria-controls": "profile",
-                        role: "tab",
-                        "data-toggle": "tab"
-                      }
-                    },
-                    [_vm._v("Scholarship")]
-                  )
                 ]),
                 _vm._v(" "),
-                _c("li", { attrs: { role: "presentation" } }, [
-                  _c(
-                    "a",
-                    {
-                      attrs: {
-                        href: "#comments1",
-                        "aria-controls": "messages",
-                        role: "tab",
-                        "data-toggle": "tab"
-                      }
-                    },
-                    [_vm._v("Money")]
-                  )
-                ])
-              ]
-            ),
-            _vm._v(" "),
-            _c("div", { staticClass: "tab-content" }, [
-              _c(
-                "div",
-                {
-                  staticClass: "tab-pane active",
-                  attrs: { role: "tabpanel", id: "category1" }
-                },
-                [
-                  _c("ul", { staticClass: "spost_nav" }, [
-                    _c("li", [
-                      _c("div", { staticClass: "media wow fadeInDown" }, [
-                        _c(
-                          "a",
-                          {
-                            staticClass: "media-left",
-                            attrs: { href: "pages/single_page.html" }
-                          },
-                          [
-                            _c("img", {
-                              attrs: { alt: "", src: "images/post_img1.jpg" }
-                            })
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "media-body" }, [
-                          _c(
-                            "a",
-                            {
-                              staticClass: "catg_title",
-                              attrs: { href: "pages/single_page.html" }
-                            },
-                            [
-                              _vm._v(
-                                " Aliquam malesuada diam eget turpis varius 1"
-                              )
-                            ]
-                          )
-                        ])
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _c("div", { staticClass: "media wow fadeInDown" }, [
-                        _c(
-                          "a",
-                          {
-                            staticClass: "media-left",
-                            attrs: { href: "pages/single_page.html" }
-                          },
-                          [
-                            _c("img", {
-                              attrs: { alt: "", src: "images/post_img2.jpg" }
-                            })
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "media-body" }, [
-                          _c(
-                            "a",
-                            {
-                              staticClass: "catg_title",
-                              attrs: { href: "pages/single_page.html" }
-                            },
-                            [
-                              _vm._v(
-                                " Aliquam malesuada diam eget turpis varius 2"
-                              )
-                            ]
-                          )
-                        ])
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _c("div", { staticClass: "media wow fadeInDown" }, [
-                        _c(
-                          "a",
-                          {
-                            staticClass: "media-left",
-                            attrs: { href: "pages/single_page.html" }
-                          },
-                          [
-                            _c("img", {
-                              attrs: { alt: "", src: "images/post_img1.jpg" }
-                            })
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "media-body" }, [
-                          _c(
-                            "a",
-                            {
-                              staticClass: "catg_title",
-                              attrs: { href: "pages/single_page.html" }
-                            },
-                            [
-                              _vm._v(
-                                " Aliquam malesuada diam eget turpis varius 3"
-                              )
-                            ]
-                          )
-                        ])
-                      ])
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", [
+                _c("li", [
+                  _c("div", { staticClass: "media wow fadeInDown" }, [
                     _c(
                       "a",
                       {
-                        staticClass: "btn btn-primary pull-right",
+                        staticClass: "media-left",
                         attrs: { href: "pages/single_page.html" }
                       },
-                      [_vm._v("More Post")]
-                    )
-                  ])
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass: "tab-pane",
-                  attrs: { role: "tabpanel", id: "video1" }
-                },
-                [
-                  _c("div", { staticClass: "vide_area" }, [
-                    _c("ul", { staticClass: "spost_nav" }, [
-                      _c("li", [
-                        _c("div", { staticClass: "media wow fadeInDown" }, [
-                          _c(
-                            "a",
-                            {
-                              staticClass: "media-left",
-                              attrs: { href: "pages/single_page.html" }
-                            },
-                            [
-                              _c("img", {
-                                attrs: { alt: "", src: "images/post_img1.jpg" }
-                              })
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "media-body" }, [
-                            _c(
-                              "a",
-                              {
-                                staticClass: "catg_title",
-                                attrs: { href: "pages/single_page.html" }
-                              },
-                              [
-                                _vm._v(
-                                  " Aliquam malesuada diam eget turpis varius 1"
-                                )
-                              ]
-                            )
-                          ])
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("li", [
-                        _c("div", { staticClass: "media wow fadeInDown" }, [
-                          _c(
-                            "a",
-                            {
-                              staticClass: "media-left",
-                              attrs: { href: "pages/single_page.html" }
-                            },
-                            [
-                              _c("img", {
-                                attrs: { alt: "", src: "images/post_img2.jpg" }
-                              })
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "media-body" }, [
-                            _c(
-                              "a",
-                              {
-                                staticClass: "catg_title",
-                                attrs: { href: "pages/single_page.html" }
-                              },
-                              [
-                                _vm._v(
-                                  " Aliquam malesuada diam eget turpis varius 2"
-                                )
-                              ]
-                            )
-                          ])
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("li", [
-                        _c("div", { staticClass: "media wow fadeInDown" }, [
-                          _c(
-                            "a",
-                            {
-                              staticClass: "media-left",
-                              attrs: { href: "pages/single_page.html" }
-                            },
-                            [
-                              _c("img", {
-                                attrs: { alt: "", src: "images/post_img1.jpg" }
-                              })
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "media-body" }, [
-                            _c(
-                              "a",
-                              {
-                                staticClass: "catg_title",
-                                attrs: { href: "pages/single_page.html" }
-                              },
-                              [
-                                _vm._v(
-                                  " Aliquam malesuada diam eget turpis varius 3"
-                                )
-                              ]
-                            )
-                          ])
-                        ])
-                      ])
-                    ]),
+                      [
+                        _c("img", {
+                          attrs: { alt: "", src: "images/post_img2.jpg" }
+                        })
+                      ]
+                    ),
                     _vm._v(" "),
-                    _c("div", [
+                    _c("div", { staticClass: "media-body" }, [
                       _c(
                         "a",
                         {
-                          staticClass: "btn btn-primary pull-right",
+                          staticClass: "catg_title",
                           attrs: { href: "pages/single_page.html" }
                         },
-                        [_vm._v("More Post")]
+                        [_vm._v(" Aliquam malesuada diam eget turpis varius 2")]
                       )
                     ])
                   ])
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass: "tab-pane",
-                  attrs: { role: "tabpanel", id: "comments1" }
-                },
-                [
-                  _c("ul", { staticClass: "spost_nav" }, [
-                    _c("li", [
-                      _c("div", { staticClass: "media wow fadeInDown" }, [
-                        _c(
-                          "a",
-                          {
-                            staticClass: "media-left",
-                            attrs: { href: "pages/single_page.html" }
-                          },
-                          [
-                            _c("img", {
-                              attrs: { alt: "", src: "images/post_img1.jpg" }
-                            })
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "media-body" }, [
-                          _c(
-                            "a",
-                            {
-                              staticClass: "catg_title",
-                              attrs: { href: "pages/single_page.html" }
-                            },
-                            [
-                              _vm._v(
-                                " Aliquam malesuada diam eget turpis varius 1"
-                              )
-                            ]
-                          )
-                        ])
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _c("div", { staticClass: "media wow fadeInDown" }, [
-                        _c(
-                          "a",
-                          {
-                            staticClass: "media-left",
-                            attrs: { href: "pages/single_page.html" }
-                          },
-                          [
-                            _c("img", {
-                              attrs: { alt: "", src: "images/post_img2.jpg" }
-                            })
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "media-body" }, [
-                          _c(
-                            "a",
-                            {
-                              staticClass: "catg_title",
-                              attrs: { href: "pages/single_page.html" }
-                            },
-                            [
-                              _vm._v(
-                                " Aliquam malesuada diam eget turpis varius 2"
-                              )
-                            ]
-                          )
-                        ])
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _c("div", { staticClass: "media wow fadeInDown" }, [
-                        _c(
-                          "a",
-                          {
-                            staticClass: "media-left",
-                            attrs: { href: "pages/single_page.html" }
-                          },
-                          [
-                            _c("img", {
-                              attrs: { alt: "", src: "images/post_img1.jpg" }
-                            })
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "media-body" }, [
-                          _c(
-                            "a",
-                            {
-                              staticClass: "catg_title",
-                              attrs: { href: "pages/single_page.html" }
-                            },
-                            [
-                              _vm._v(
-                                " Aliquam malesuada diam eget turpis varius 3"
-                              )
-                            ]
-                          )
-                        ])
-                      ])
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", [
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c("div", { staticClass: "media wow fadeInDown" }, [
                     _c(
                       "a",
                       {
-                        staticClass: "btn btn-primary pull-right",
+                        staticClass: "media-left",
                         attrs: { href: "pages/single_page.html" }
                       },
-                      [_vm._v("More Post")]
-                    )
+                      [
+                        _c("img", {
+                          attrs: { alt: "", src: "images/post_img1.jpg" }
+                        })
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "media-body" }, [
+                      _c(
+                        "a",
+                        {
+                          staticClass: "catg_title",
+                          attrs: { href: "pages/single_page.html" }
+                        },
+                        [_vm._v(" Aliquam malesuada diam eget turpis varius 3")]
+                      )
+                    ])
                   ])
-                ]
-              )
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c("div", { staticClass: "media wow fadeInDown" }, [
+                    _c(
+                      "a",
+                      {
+                        staticClass: "media-left",
+                        attrs: { href: "pages/single_page.html" }
+                      },
+                      [
+                        _c("img", {
+                          attrs: { alt: "", src: "images/post_img2.jpg" }
+                        })
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "media-body" }, [
+                      _c(
+                        "a",
+                        {
+                          staticClass: "catg_title",
+                          attrs: { href: "pages/single_page.html" }
+                        },
+                        [_vm._v(" Aliquam malesuada diam eget turpis varius 4")]
+                      )
+                    ])
+                  ])
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", [
+                _c(
+                  "a",
+                  {
+                    staticClass: "btn btn-primary pull-right",
+                    attrs: { href: "pages/single_page.html" }
+                  },
+                  [_vm._v("More Post")]
+                )
+              ])
             ])
-          ]),
-          _vm._v(" "),
-          _c(
-            "div",
-            {
-              staticClass: "single_sidebar",
-              staticStyle: { "padding-top": "30px" }
-            },
-            [
-              _c(
-                "ul",
-                { staticClass: "nav nav-tabs", attrs: { role: "tablist" } },
-                [
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            staticClass: "tab-pane",
+            attrs: { role: "tabpanel", id: "comments" }
+          },
+          [
+            _c("ul", { staticClass: "spost_nav" }, [
+              _c("li", [
+                _c("div", { staticClass: "media wow fadeInDown" }, [
                   _c(
-                    "li",
-                    { staticClass: "active", attrs: { role: "presentation" } },
+                    "a",
+                    {
+                      staticClass: "media-left",
+                      attrs: { href: "pages/single_page.html" }
+                    },
                     [
-                      _c(
-                        "a",
-                        {
-                          attrs: {
-                            href: "#category2",
-                            "aria-controls": "home",
-                            role: "tab",
-                            "data-toggle": "tab"
-                          }
-                        },
-                        [_vm._v("Others")]
-                      )
+                      _c("img", {
+                        attrs: { alt: "", src: "images/post_img1.jpg" }
+                      })
                     ]
                   ),
                   _vm._v(" "),
-                  _c("li", { attrs: { role: "presentation" } }, [
+                  _c("div", { staticClass: "media-body" }, [
                     _c(
                       "a",
                       {
-                        attrs: {
-                          href: "#video2",
-                          "aria-controls": "profile",
-                          role: "tab",
-                          "data-toggle": "tab"
-                        }
+                        staticClass: "catg_title",
+                        attrs: { href: "pages/single_page.html" }
                       },
-                      [_vm._v("Others")]
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("li", { attrs: { role: "presentation" } }, [
-                    _c(
-                      "a",
-                      {
-                        attrs: {
-                          href: "#comments2",
-                          "aria-controls": "messages",
-                          role: "tab",
-                          "data-toggle": "tab"
-                        }
-                      },
-                      [_vm._v("Others")]
+                      [_vm._v(" Aliquam malesuada diam eget turpis varius 1")]
                     )
                   ])
-                ]
-              ),
+                ])
+              ]),
               _vm._v(" "),
-              _c("div", { staticClass: "tab-content" }, [
-                _c(
-                  "div",
-                  {
-                    staticClass: "tab-pane active",
-                    attrs: { role: "tabpanel", id: "category2" }
-                  },
-                  [
-                    _c("ul", { staticClass: "spost_nav" }, [
-                      _c("li", [
-                        _c("div", { staticClass: "media wow fadeInDown" }, [
-                          _c(
-                            "a",
-                            {
-                              staticClass: "media-left",
-                              attrs: { href: "pages/single_page.html" }
-                            },
-                            [
-                              _c("img", {
-                                attrs: { alt: "", src: "images/post_img1.jpg" }
-                              })
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "media-body" }, [
-                            _c(
-                              "a",
-                              {
-                                staticClass: "catg_title",
-                                attrs: { href: "pages/single_page.html" }
-                              },
-                              [
-                                _vm._v(
-                                  " Aliquam malesuada diam eget turpis varius 1"
-                                )
-                              ]
-                            )
-                          ])
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("li", [
-                        _c("div", { staticClass: "media wow fadeInDown" }, [
-                          _c(
-                            "a",
-                            {
-                              staticClass: "media-left",
-                              attrs: { href: "pages/single_page.html" }
-                            },
-                            [
-                              _c("img", {
-                                attrs: { alt: "", src: "images/post_img2.jpg" }
-                              })
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "media-body" }, [
-                            _c(
-                              "a",
-                              {
-                                staticClass: "catg_title",
-                                attrs: { href: "pages/single_page.html" }
-                              },
-                              [
-                                _vm._v(
-                                  " Aliquam malesuada diam eget turpis varius 2"
-                                )
-                              ]
-                            )
-                          ])
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("li", [
-                        _c("div", { staticClass: "media wow fadeInDown" }, [
-                          _c(
-                            "a",
-                            {
-                              staticClass: "media-left",
-                              attrs: { href: "pages/single_page.html" }
-                            },
-                            [
-                              _c("img", {
-                                attrs: { alt: "", src: "images/post_img1.jpg" }
-                              })
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "media-body" }, [
-                            _c(
-                              "a",
-                              {
-                                staticClass: "catg_title",
-                                attrs: { href: "pages/single_page.html" }
-                              },
-                              [
-                                _vm._v(
-                                  " Aliquam malesuada diam eget turpis varius 3"
-                                )
-                              ]
-                            )
-                          ])
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("li", [
-                        _c("div", { staticClass: "media wow fadeInDown" }, [
-                          _c(
-                            "a",
-                            {
-                              staticClass: "media-left",
-                              attrs: { href: "pages/single_page.html" }
-                            },
-                            [
-                              _c("img", {
-                                attrs: { alt: "", src: "images/post_img2.jpg" }
-                              })
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "media-body" }, [
-                            _c(
-                              "a",
-                              {
-                                staticClass: "catg_title",
-                                attrs: { href: "pages/single_page.html" }
-                              },
-                              [
-                                _vm._v(
-                                  " Aliquam malesuada diam eget turpis varius 4"
-                                )
-                              ]
-                            )
-                          ])
-                        ])
-                      ])
-                    ]),
+              _c("li", [
+                _c("div", { staticClass: "media wow fadeInDown" }, [
+                  _c(
+                    "a",
+                    {
+                      staticClass: "media-left",
+                      attrs: { href: "pages/single_page.html" }
+                    },
+                    [
+                      _c("img", {
+                        attrs: { alt: "", src: "images/post_img2.jpg" }
+                      })
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "media-body" }, [
+                    _c(
+                      "a",
+                      {
+                        staticClass: "catg_title",
+                        attrs: { href: "pages/single_page.html" }
+                      },
+                      [_vm._v(" Aliquam malesuada diam eget turpis varius 2")]
+                    )
+                  ])
+                ])
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _c("div", { staticClass: "media wow fadeInDown" }, [
+                  _c(
+                    "a",
+                    {
+                      staticClass: "media-left",
+                      attrs: { href: "pages/single_page.html" }
+                    },
+                    [
+                      _c("img", {
+                        attrs: { alt: "", src: "images/post_img1.jpg" }
+                      })
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "media-body" }, [
+                    _c(
+                      "a",
+                      {
+                        staticClass: "catg_title",
+                        attrs: { href: "pages/single_page.html" }
+                      },
+                      [_vm._v(" Aliquam malesuada diam eget turpis varius 3")]
+                    )
+                  ])
+                ])
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _c("div", { staticClass: "media wow fadeInDown" }, [
+                  _c(
+                    "a",
+                    {
+                      staticClass: "media-left",
+                      attrs: { href: "pages/single_page.html" }
+                    },
+                    [
+                      _c("img", {
+                        attrs: { alt: "", src: "images/post_img2.jpg" }
+                      })
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "media-body" }, [
+                    _c(
+                      "a",
+                      {
+                        staticClass: "catg_title",
+                        attrs: { href: "pages/single_page.html" }
+                      },
+                      [_vm._v(" Aliquam malesuada diam eget turpis varius 4")]
+                    )
+                  ])
+                ])
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", [
+              _c(
+                "a",
+                {
+                  staticClass: "btn btn-primary pull-right",
+                  attrs: { href: "pages/single_page.html" }
+                },
+                [_vm._v("More Post")]
+              )
+            ])
+          ]
+        )
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "single_sidebar" }, [
+      _c("ul", { staticClass: "nav nav-tabs", attrs: { role: "tablist" } }, [
+        _c("li", { staticClass: "active", attrs: { role: "presentation" } }, [
+          _c(
+            "a",
+            {
+              attrs: {
+                href: "#category1",
+                "aria-controls": "home",
+                role: "tab",
+                "data-toggle": "tab"
+              }
+            },
+            [_vm._v("Stipend")]
+          )
+        ]),
+        _vm._v(" "),
+        _c("li", { attrs: { role: "presentation" } }, [
+          _c(
+            "a",
+            {
+              attrs: {
+                href: "#video1",
+                "aria-controls": "profile",
+                role: "tab",
+                "data-toggle": "tab"
+              }
+            },
+            [_vm._v("Scholarship")]
+          )
+        ]),
+        _vm._v(" "),
+        _c("li", { attrs: { role: "presentation" } }, [
+          _c(
+            "a",
+            {
+              attrs: {
+                href: "#comments1",
+                "aria-controls": "messages",
+                role: "tab",
+                "data-toggle": "tab"
+              }
+            },
+            [_vm._v("Money")]
+          )
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "tab-content" }, [
+        _c(
+          "div",
+          {
+            staticClass: "tab-pane active",
+            attrs: { role: "tabpanel", id: "category1" }
+          },
+          [
+            _c("ul", { staticClass: "spost_nav" }, [
+              _c("li", [
+                _c("div", { staticClass: "media wow fadeInDown" }, [
+                  _c(
+                    "a",
+                    {
+                      staticClass: "media-left",
+                      attrs: { href: "pages/single_page.html" }
+                    },
+                    [
+                      _c("img", {
+                        attrs: { alt: "", src: "images/post_img1.jpg" }
+                      })
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "media-body" }, [
+                    _c(
+                      "a",
+                      {
+                        staticClass: "catg_title",
+                        attrs: { href: "pages/single_page.html" }
+                      },
+                      [_vm._v(" Aliquam malesuada diam eget turpis varius 1")]
+                    )
+                  ])
+                ])
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _c("div", { staticClass: "media wow fadeInDown" }, [
+                  _c(
+                    "a",
+                    {
+                      staticClass: "media-left",
+                      attrs: { href: "pages/single_page.html" }
+                    },
+                    [
+                      _c("img", {
+                        attrs: { alt: "", src: "images/post_img2.jpg" }
+                      })
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "media-body" }, [
+                    _c(
+                      "a",
+                      {
+                        staticClass: "catg_title",
+                        attrs: { href: "pages/single_page.html" }
+                      },
+                      [_vm._v(" Aliquam malesuada diam eget turpis varius 2")]
+                    )
+                  ])
+                ])
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _c("div", { staticClass: "media wow fadeInDown" }, [
+                  _c(
+                    "a",
+                    {
+                      staticClass: "media-left",
+                      attrs: { href: "pages/single_page.html" }
+                    },
+                    [
+                      _c("img", {
+                        attrs: { alt: "", src: "images/post_img1.jpg" }
+                      })
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "media-body" }, [
+                    _c(
+                      "a",
+                      {
+                        staticClass: "catg_title",
+                        attrs: { href: "pages/single_page.html" }
+                      },
+                      [_vm._v(" Aliquam malesuada diam eget turpis varius 3")]
+                    )
+                  ])
+                ])
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", [
+              _c(
+                "a",
+                {
+                  staticClass: "btn btn-primary pull-right",
+                  attrs: { href: "pages/single_page.html" }
+                },
+                [_vm._v("More Post")]
+              )
+            ])
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            staticClass: "tab-pane",
+            attrs: { role: "tabpanel", id: "video1" }
+          },
+          [
+            _c("div", { staticClass: "vide_area" }, [
+              _c("ul", { staticClass: "spost_nav" }, [
+                _c("li", [
+                  _c("div", { staticClass: "media wow fadeInDown" }, [
+                    _c(
+                      "a",
+                      {
+                        staticClass: "media-left",
+                        attrs: { href: "pages/single_page.html" }
+                      },
+                      [
+                        _c("img", {
+                          attrs: { alt: "", src: "images/post_img1.jpg" }
+                        })
+                      ]
+                    ),
                     _vm._v(" "),
-                    _c("div", [
+                    _c("div", { staticClass: "media-body" }, [
                       _c(
                         "a",
                         {
-                          staticClass: "btn btn-primary pull-right",
+                          staticClass: "catg_title",
                           attrs: { href: "pages/single_page.html" }
                         },
-                        [_vm._v("More Post")]
+                        [_vm._v(" Aliquam malesuada diam eget turpis varius 1")]
                       )
                     ])
-                  ]
-                ),
+                  ])
+                ]),
                 _vm._v(" "),
-                _c(
-                  "div",
-                  {
-                    staticClass: "tab-pane",
-                    attrs: { role: "tabpanel", id: "video2" }
-                  },
-                  [
-                    _c("div", { staticClass: "vide_area" }, [
-                      _c("ul", { staticClass: "spost_nav" }, [
-                        _c("li", [
-                          _c("div", { staticClass: "media wow fadeInDown" }, [
-                            _c(
-                              "a",
-                              {
-                                staticClass: "media-left",
-                                attrs: { href: "pages/single_page.html" }
-                              },
-                              [
-                                _c("img", {
-                                  attrs: {
-                                    alt: "",
-                                    src: "images/post_img1.jpg"
-                                  }
-                                })
-                              ]
-                            ),
-                            _vm._v(" "),
-                            _c("div", { staticClass: "media-body" }, [
-                              _c(
-                                "a",
-                                {
-                                  staticClass: "catg_title",
-                                  attrs: { href: "pages/single_page.html" }
-                                },
-                                [
-                                  _vm._v(
-                                    " Aliquam malesuada diam eget turpis varius 1"
-                                  )
-                                ]
-                              )
-                            ])
-                          ])
-                        ]),
-                        _vm._v(" "),
-                        _c("li", [
-                          _c("div", { staticClass: "media wow fadeInDown" }, [
-                            _c(
-                              "a",
-                              {
-                                staticClass: "media-left",
-                                attrs: { href: "pages/single_page.html" }
-                              },
-                              [
-                                _c("img", {
-                                  attrs: {
-                                    alt: "",
-                                    src: "images/post_img2.jpg"
-                                  }
-                                })
-                              ]
-                            ),
-                            _vm._v(" "),
-                            _c("div", { staticClass: "media-body" }, [
-                              _c(
-                                "a",
-                                {
-                                  staticClass: "catg_title",
-                                  attrs: { href: "pages/single_page.html" }
-                                },
-                                [
-                                  _vm._v(
-                                    " Aliquam malesuada diam eget turpis varius 2"
-                                  )
-                                ]
-                              )
-                            ])
-                          ])
-                        ]),
-                        _vm._v(" "),
-                        _c("li", [
-                          _c("div", { staticClass: "media wow fadeInDown" }, [
-                            _c(
-                              "a",
-                              {
-                                staticClass: "media-left",
-                                attrs: { href: "pages/single_page.html" }
-                              },
-                              [
-                                _c("img", {
-                                  attrs: {
-                                    alt: "",
-                                    src: "images/post_img1.jpg"
-                                  }
-                                })
-                              ]
-                            ),
-                            _vm._v(" "),
-                            _c("div", { staticClass: "media-body" }, [
-                              _c(
-                                "a",
-                                {
-                                  staticClass: "catg_title",
-                                  attrs: { href: "pages/single_page.html" }
-                                },
-                                [
-                                  _vm._v(
-                                    " Aliquam malesuada diam eget turpis varius 3"
-                                  )
-                                ]
-                              )
-                            ])
-                          ])
-                        ]),
-                        _vm._v(" "),
-                        _c("li", [
-                          _c("div", { staticClass: "media wow fadeInDown" }, [
-                            _c(
-                              "a",
-                              {
-                                staticClass: "media-left",
-                                attrs: { href: "pages/single_page.html" }
-                              },
-                              [
-                                _c("img", {
-                                  attrs: {
-                                    alt: "",
-                                    src: "images/post_img2.jpg"
-                                  }
-                                })
-                              ]
-                            ),
-                            _vm._v(" "),
-                            _c("div", { staticClass: "media-body" }, [
-                              _c(
-                                "a",
-                                {
-                                  staticClass: "catg_title",
-                                  attrs: { href: "pages/single_page.html" }
-                                },
-                                [
-                                  _vm._v(
-                                    " Aliquam malesuada diam eget turpis varius 4"
-                                  )
-                                ]
-                              )
-                            ])
-                          ])
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", [
-                        _c(
-                          "a",
-                          {
-                            staticClass: "btn btn-primary pull-right",
-                            attrs: { href: "pages/single_page.html" }
-                          },
-                          [_vm._v("More Post")]
-                        )
-                      ])
-                    ])
-                  ]
-                ),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  {
-                    staticClass: "tab-pane",
-                    attrs: { role: "tabpanel", id: "comments2" }
-                  },
-                  [
-                    _c("ul", { staticClass: "spost_nav" }, [
-                      _c("li", [
-                        _c("div", { staticClass: "media wow fadeInDown" }, [
-                          _c(
-                            "a",
-                            {
-                              staticClass: "media-left",
-                              attrs: { href: "pages/single_page.html" }
-                            },
-                            [
-                              _c("img", {
-                                attrs: { alt: "", src: "images/post_img1.jpg" }
-                              })
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "media-body" }, [
-                            _c(
-                              "a",
-                              {
-                                staticClass: "catg_title",
-                                attrs: { href: "pages/single_page.html" }
-                              },
-                              [
-                                _vm._v(
-                                  " Aliquam malesuada diam eget turpis varius 1"
-                                )
-                              ]
-                            )
-                          ])
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("li", [
-                        _c("div", { staticClass: "media wow fadeInDown" }, [
-                          _c(
-                            "a",
-                            {
-                              staticClass: "media-left",
-                              attrs: { href: "pages/single_page.html" }
-                            },
-                            [
-                              _c("img", {
-                                attrs: { alt: "", src: "images/post_img2.jpg" }
-                              })
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "media-body" }, [
-                            _c(
-                              "a",
-                              {
-                                staticClass: "catg_title",
-                                attrs: { href: "pages/single_page.html" }
-                              },
-                              [
-                                _vm._v(
-                                  " Aliquam malesuada diam eget turpis varius 2"
-                                )
-                              ]
-                            )
-                          ])
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("li", [
-                        _c("div", { staticClass: "media wow fadeInDown" }, [
-                          _c(
-                            "a",
-                            {
-                              staticClass: "media-left",
-                              attrs: { href: "pages/single_page.html" }
-                            },
-                            [
-                              _c("img", {
-                                attrs: { alt: "", src: "images/post_img1.jpg" }
-                              })
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "media-body" }, [
-                            _c(
-                              "a",
-                              {
-                                staticClass: "catg_title",
-                                attrs: { href: "pages/single_page.html" }
-                              },
-                              [
-                                _vm._v(
-                                  " Aliquam malesuada diam eget turpis varius 3"
-                                )
-                              ]
-                            )
-                          ])
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("li", [
-                        _c("div", { staticClass: "media wow fadeInDown" }, [
-                          _c(
-                            "a",
-                            {
-                              staticClass: "media-left",
-                              attrs: { href: "pages/single_page.html" }
-                            },
-                            [
-                              _c("img", {
-                                attrs: { alt: "", src: "images/post_img2.jpg" }
-                              })
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "media-body" }, [
-                            _c(
-                              "a",
-                              {
-                                staticClass: "catg_title",
-                                attrs: { href: "pages/single_page.html" }
-                              },
-                              [
-                                _vm._v(
-                                  " Aliquam malesuada diam eget turpis varius 4"
-                                )
-                              ]
-                            )
-                          ])
-                        ])
-                      ])
-                    ]),
+                _c("li", [
+                  _c("div", { staticClass: "media wow fadeInDown" }, [
+                    _c(
+                      "a",
+                      {
+                        staticClass: "media-left",
+                        attrs: { href: "pages/single_page.html" }
+                      },
+                      [
+                        _c("img", {
+                          attrs: { alt: "", src: "images/post_img2.jpg" }
+                        })
+                      ]
+                    ),
                     _vm._v(" "),
-                    _c("div", [
+                    _c("div", { staticClass: "media-body" }, [
                       _c(
                         "a",
                         {
-                          staticClass: "btn btn-primary pull-right",
+                          staticClass: "catg_title",
                           attrs: { href: "pages/single_page.html" }
                         },
-                        [_vm._v("More Post")]
+                        [_vm._v(" Aliquam malesuada diam eget turpis varius 2")]
                       )
                     ])
-                  ]
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c("div", { staticClass: "media wow fadeInDown" }, [
+                    _c(
+                      "a",
+                      {
+                        staticClass: "media-left",
+                        attrs: { href: "pages/single_page.html" }
+                      },
+                      [
+                        _c("img", {
+                          attrs: { alt: "", src: "images/post_img1.jpg" }
+                        })
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "media-body" }, [
+                      _c(
+                        "a",
+                        {
+                          staticClass: "catg_title",
+                          attrs: { href: "pages/single_page.html" }
+                        },
+                        [_vm._v(" Aliquam malesuada diam eget turpis varius 3")]
+                      )
+                    ])
+                  ])
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", [
+                _c(
+                  "a",
+                  {
+                    staticClass: "btn btn-primary pull-right",
+                    attrs: { href: "pages/single_page.html" }
+                  },
+                  [_vm._v("More Post")]
+                )
+              ])
+            ])
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            staticClass: "tab-pane",
+            attrs: { role: "tabpanel", id: "comments1" }
+          },
+          [
+            _c("ul", { staticClass: "spost_nav" }, [
+              _c("li", [
+                _c("div", { staticClass: "media wow fadeInDown" }, [
+                  _c(
+                    "a",
+                    {
+                      staticClass: "media-left",
+                      attrs: { href: "pages/single_page.html" }
+                    },
+                    [
+                      _c("img", {
+                        attrs: { alt: "", src: "images/post_img1.jpg" }
+                      })
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "media-body" }, [
+                    _c(
+                      "a",
+                      {
+                        staticClass: "catg_title",
+                        attrs: { href: "pages/single_page.html" }
+                      },
+                      [_vm._v(" Aliquam malesuada diam eget turpis varius 1")]
+                    )
+                  ])
+                ])
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _c("div", { staticClass: "media wow fadeInDown" }, [
+                  _c(
+                    "a",
+                    {
+                      staticClass: "media-left",
+                      attrs: { href: "pages/single_page.html" }
+                    },
+                    [
+                      _c("img", {
+                        attrs: { alt: "", src: "images/post_img2.jpg" }
+                      })
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "media-body" }, [
+                    _c(
+                      "a",
+                      {
+                        staticClass: "catg_title",
+                        attrs: { href: "pages/single_page.html" }
+                      },
+                      [_vm._v(" Aliquam malesuada diam eget turpis varius 2")]
+                    )
+                  ])
+                ])
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _c("div", { staticClass: "media wow fadeInDown" }, [
+                  _c(
+                    "a",
+                    {
+                      staticClass: "media-left",
+                      attrs: { href: "pages/single_page.html" }
+                    },
+                    [
+                      _c("img", {
+                        attrs: { alt: "", src: "images/post_img1.jpg" }
+                      })
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "media-body" }, [
+                    _c(
+                      "a",
+                      {
+                        staticClass: "catg_title",
+                        attrs: { href: "pages/single_page.html" }
+                      },
+                      [_vm._v(" Aliquam malesuada diam eget turpis varius 3")]
+                    )
+                  ])
+                ])
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", [
+              _c(
+                "a",
+                {
+                  staticClass: "btn btn-primary pull-right",
+                  attrs: { href: "pages/single_page.html" }
+                },
+                [_vm._v("More Post")]
+              )
+            ])
+          ]
+        )
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "single_sidebar", staticStyle: { "padding-top": "30px" } },
+      [
+        _c("ul", { staticClass: "nav nav-tabs", attrs: { role: "tablist" } }, [
+          _c("li", { staticClass: "active", attrs: { role: "presentation" } }, [
+            _c(
+              "a",
+              {
+                attrs: {
+                  href: "#category2",
+                  "aria-controls": "home",
+                  role: "tab",
+                  "data-toggle": "tab"
+                }
+              },
+              [_vm._v("Others")]
+            )
+          ]),
+          _vm._v(" "),
+          _c("li", { attrs: { role: "presentation" } }, [
+            _c(
+              "a",
+              {
+                attrs: {
+                  href: "#video2",
+                  "aria-controls": "profile",
+                  role: "tab",
+                  "data-toggle": "tab"
+                }
+              },
+              [_vm._v("Others")]
+            )
+          ]),
+          _vm._v(" "),
+          _c("li", { attrs: { role: "presentation" } }, [
+            _c(
+              "a",
+              {
+                attrs: {
+                  href: "#comments2",
+                  "aria-controls": "messages",
+                  role: "tab",
+                  "data-toggle": "tab"
+                }
+              },
+              [_vm._v("Others")]
+            )
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "tab-content" }, [
+          _c(
+            "div",
+            {
+              staticClass: "tab-pane active",
+              attrs: { role: "tabpanel", id: "category2" }
+            },
+            [
+              _c("ul", { staticClass: "spost_nav" }, [
+                _c("li", [
+                  _c("div", { staticClass: "media wow fadeInDown" }, [
+                    _c(
+                      "a",
+                      {
+                        staticClass: "media-left",
+                        attrs: { href: "pages/single_page.html" }
+                      },
+                      [
+                        _c("img", {
+                          attrs: { alt: "", src: "images/post_img1.jpg" }
+                        })
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "media-body" }, [
+                      _c(
+                        "a",
+                        {
+                          staticClass: "catg_title",
+                          attrs: { href: "pages/single_page.html" }
+                        },
+                        [_vm._v(" Aliquam malesuada diam eget turpis varius 1")]
+                      )
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c("div", { staticClass: "media wow fadeInDown" }, [
+                    _c(
+                      "a",
+                      {
+                        staticClass: "media-left",
+                        attrs: { href: "pages/single_page.html" }
+                      },
+                      [
+                        _c("img", {
+                          attrs: { alt: "", src: "images/post_img2.jpg" }
+                        })
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "media-body" }, [
+                      _c(
+                        "a",
+                        {
+                          staticClass: "catg_title",
+                          attrs: { href: "pages/single_page.html" }
+                        },
+                        [_vm._v(" Aliquam malesuada diam eget turpis varius 2")]
+                      )
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c("div", { staticClass: "media wow fadeInDown" }, [
+                    _c(
+                      "a",
+                      {
+                        staticClass: "media-left",
+                        attrs: { href: "pages/single_page.html" }
+                      },
+                      [
+                        _c("img", {
+                          attrs: { alt: "", src: "images/post_img1.jpg" }
+                        })
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "media-body" }, [
+                      _c(
+                        "a",
+                        {
+                          staticClass: "catg_title",
+                          attrs: { href: "pages/single_page.html" }
+                        },
+                        [_vm._v(" Aliquam malesuada diam eget turpis varius 3")]
+                      )
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c("div", { staticClass: "media wow fadeInDown" }, [
+                    _c(
+                      "a",
+                      {
+                        staticClass: "media-left",
+                        attrs: { href: "pages/single_page.html" }
+                      },
+                      [
+                        _c("img", {
+                          attrs: { alt: "", src: "images/post_img2.jpg" }
+                        })
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "media-body" }, [
+                      _c(
+                        "a",
+                        {
+                          staticClass: "catg_title",
+                          attrs: { href: "pages/single_page.html" }
+                        },
+                        [_vm._v(" Aliquam malesuada diam eget turpis varius 4")]
+                      )
+                    ])
+                  ])
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", [
+                _c(
+                  "a",
+                  {
+                    staticClass: "btn btn-primary pull-right",
+                    attrs: { href: "pages/single_page.html" }
+                  },
+                  [_vm._v("More Post")]
                 )
               ])
             ]
@@ -80512,57 +79721,349 @@ var staticRenderFns = [
           _c(
             "div",
             {
-              staticClass: "single_sidebar wow fadeInDown",
-              staticStyle: { "padding-top": "25px" }
+              staticClass: "tab-pane",
+              attrs: { role: "tabpanel", id: "video2" }
             },
             [
-              _c("h2", [_c("span", [_vm._v("Sponsor")])]),
-              _vm._v(" "),
-              _c("a", { staticClass: "sideAdd", attrs: { href: "#" } }, [
-                _c("img", { attrs: { src: "images/add_img.jpg", alt: "" } })
+              _c("div", { staticClass: "vide_area" }, [
+                _c("ul", { staticClass: "spost_nav" }, [
+                  _c("li", [
+                    _c("div", { staticClass: "media wow fadeInDown" }, [
+                      _c(
+                        "a",
+                        {
+                          staticClass: "media-left",
+                          attrs: { href: "pages/single_page.html" }
+                        },
+                        [
+                          _c("img", {
+                            attrs: { alt: "", src: "images/post_img1.jpg" }
+                          })
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "media-body" }, [
+                        _c(
+                          "a",
+                          {
+                            staticClass: "catg_title",
+                            attrs: { href: "pages/single_page.html" }
+                          },
+                          [
+                            _vm._v(
+                              " Aliquam malesuada diam eget turpis varius 1"
+                            )
+                          ]
+                        )
+                      ])
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("li", [
+                    _c("div", { staticClass: "media wow fadeInDown" }, [
+                      _c(
+                        "a",
+                        {
+                          staticClass: "media-left",
+                          attrs: { href: "pages/single_page.html" }
+                        },
+                        [
+                          _c("img", {
+                            attrs: { alt: "", src: "images/post_img2.jpg" }
+                          })
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "media-body" }, [
+                        _c(
+                          "a",
+                          {
+                            staticClass: "catg_title",
+                            attrs: { href: "pages/single_page.html" }
+                          },
+                          [
+                            _vm._v(
+                              " Aliquam malesuada diam eget turpis varius 2"
+                            )
+                          ]
+                        )
+                      ])
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("li", [
+                    _c("div", { staticClass: "media wow fadeInDown" }, [
+                      _c(
+                        "a",
+                        {
+                          staticClass: "media-left",
+                          attrs: { href: "pages/single_page.html" }
+                        },
+                        [
+                          _c("img", {
+                            attrs: { alt: "", src: "images/post_img1.jpg" }
+                          })
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "media-body" }, [
+                        _c(
+                          "a",
+                          {
+                            staticClass: "catg_title",
+                            attrs: { href: "pages/single_page.html" }
+                          },
+                          [
+                            _vm._v(
+                              " Aliquam malesuada diam eget turpis varius 3"
+                            )
+                          ]
+                        )
+                      ])
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("li", [
+                    _c("div", { staticClass: "media wow fadeInDown" }, [
+                      _c(
+                        "a",
+                        {
+                          staticClass: "media-left",
+                          attrs: { href: "pages/single_page.html" }
+                        },
+                        [
+                          _c("img", {
+                            attrs: { alt: "", src: "images/post_img2.jpg" }
+                          })
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "media-body" }, [
+                        _c(
+                          "a",
+                          {
+                            staticClass: "catg_title",
+                            attrs: { href: "pages/single_page.html" }
+                          },
+                          [
+                            _vm._v(
+                              " Aliquam malesuada diam eget turpis varius 4"
+                            )
+                          ]
+                        )
+                      ])
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", [
+                  _c(
+                    "a",
+                    {
+                      staticClass: "btn btn-primary pull-right",
+                      attrs: { href: "pages/single_page.html" }
+                    },
+                    [_vm._v("More Post")]
+                  )
+                ])
               ])
             ]
           ),
           _vm._v(" "),
-          _c("div", { staticClass: "single_sidebar wow fadeInDown" }, [
-            _c("h2", [_c("span", [_vm._v("Category Archive")])]),
-            _vm._v(" "),
-            _c("select", { staticClass: "catgArchive" }, [
-              _c("option", [_vm._v("Select Category")]),
-              _vm._v(" "),
-              _c("option", [_vm._v("Life styles")]),
-              _vm._v(" "),
-              _c("option", [_vm._v("Sports")]),
-              _vm._v(" "),
-              _c("option", [_vm._v("Technology")]),
-              _vm._v(" "),
-              _c("option", [_vm._v("Treads")])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "single_sidebar wow fadeInDown" }, [
-            _c("h2", [_c("span", [_vm._v("Links")])]),
-            _vm._v(" "),
-            _c("ul", [
-              _c("li", [
-                _c("a", { attrs: { href: "#" } }, [
-                  _vm._v("Ministry Of Education")
+          _c(
+            "div",
+            {
+              staticClass: "tab-pane",
+              attrs: { role: "tabpanel", id: "comments2" }
+            },
+            [
+              _c("ul", { staticClass: "spost_nav" }, [
+                _c("li", [
+                  _c("div", { staticClass: "media wow fadeInDown" }, [
+                    _c(
+                      "a",
+                      {
+                        staticClass: "media-left",
+                        attrs: { href: "pages/single_page.html" }
+                      },
+                      [
+                        _c("img", {
+                          attrs: { alt: "", src: "images/post_img1.jpg" }
+                        })
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "media-body" }, [
+                      _c(
+                        "a",
+                        {
+                          staticClass: "catg_title",
+                          attrs: { href: "pages/single_page.html" }
+                        },
+                        [_vm._v(" Aliquam malesuada diam eget turpis varius 1")]
+                      )
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c("div", { staticClass: "media wow fadeInDown" }, [
+                    _c(
+                      "a",
+                      {
+                        staticClass: "media-left",
+                        attrs: { href: "pages/single_page.html" }
+                      },
+                      [
+                        _c("img", {
+                          attrs: { alt: "", src: "images/post_img2.jpg" }
+                        })
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "media-body" }, [
+                      _c(
+                        "a",
+                        {
+                          staticClass: "catg_title",
+                          attrs: { href: "pages/single_page.html" }
+                        },
+                        [_vm._v(" Aliquam malesuada diam eget turpis varius 2")]
+                      )
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c("div", { staticClass: "media wow fadeInDown" }, [
+                    _c(
+                      "a",
+                      {
+                        staticClass: "media-left",
+                        attrs: { href: "pages/single_page.html" }
+                      },
+                      [
+                        _c("img", {
+                          attrs: { alt: "", src: "images/post_img1.jpg" }
+                        })
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "media-body" }, [
+                      _c(
+                        "a",
+                        {
+                          staticClass: "catg_title",
+                          attrs: { href: "pages/single_page.html" }
+                        },
+                        [_vm._v(" Aliquam malesuada diam eget turpis varius 3")]
+                      )
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c("div", { staticClass: "media wow fadeInDown" }, [
+                    _c(
+                      "a",
+                      {
+                        staticClass: "media-left",
+                        attrs: { href: "pages/single_page.html" }
+                      },
+                      [
+                        _c("img", {
+                          attrs: { alt: "", src: "images/post_img2.jpg" }
+                        })
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "media-body" }, [
+                      _c(
+                        "a",
+                        {
+                          staticClass: "catg_title",
+                          attrs: { href: "pages/single_page.html" }
+                        },
+                        [_vm._v(" Aliquam malesuada diam eget turpis varius 4")]
+                      )
+                    ])
+                  ])
                 ])
               ]),
               _vm._v(" "),
-              _c("li", [
-                _c("a", { attrs: { href: "#" } }, [
-                  _vm._v("Directorate Of Ministry")
-                ])
-              ]),
-              _vm._v(" "),
-              _c("li", [
-                _c("a", { attrs: { href: "#" } }, [
-                  _vm._v("National University")
-                ])
+              _c("div", [
+                _c(
+                  "a",
+                  {
+                    staticClass: "btn btn-primary pull-right",
+                    attrs: { href: "pages/single_page.html" }
+                  },
+                  [_vm._v("More Post")]
+                )
               ])
-            ])
-          ])
+            ]
+          )
+        ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass: "single_sidebar wow fadeInDown",
+        staticStyle: { "padding-top": "25px" }
+      },
+      [
+        _c("h2", [_c("span", [_vm._v("Sponsor")])]),
+        _vm._v(" "),
+        _c("a", { staticClass: "sideAdd", attrs: { href: "#" } }, [
+          _c("img", { attrs: { src: "images/add_img.jpg", alt: "" } })
+        ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "single_sidebar wow fadeInDown" }, [
+      _c("h2", [_c("span", [_vm._v("Category Archive")])]),
+      _vm._v(" "),
+      _c("select", { staticClass: "catgArchive" }, [
+        _c("option", [_vm._v("Select Category")]),
+        _vm._v(" "),
+        _c("option", [_vm._v("Life styles")]),
+        _vm._v(" "),
+        _c("option", [_vm._v("Sports")]),
+        _vm._v(" "),
+        _c("option", [_vm._v("Technology")]),
+        _vm._v(" "),
+        _c("option", [_vm._v("Treads")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "single_sidebar wow fadeInDown" }, [
+      _c("h2", [_c("span", [_vm._v("Links")])]),
+      _vm._v(" "),
+      _c("ul", [
+        _c("li", [
+          _c("a", { attrs: { href: "#" } }, [_vm._v("Ministry Of Education")])
+        ]),
+        _vm._v(" "),
+        _c("li", [
+          _c("a", { attrs: { href: "#" } }, [_vm._v("Directorate Of Ministry")])
+        ]),
+        _vm._v(" "),
+        _c("li", [
+          _c("a", { attrs: { href: "#" } }, [_vm._v("National University")])
         ])
       ])
     ])
@@ -80589,343 +80090,89 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { attrs: { id: "singlePost" } }, [
-    _vm._m(0),
-    _vm._v(" "),
-    _vm._m(1),
-    _vm._v(" "),
-    _c("section", { attrs: { id: "newsSection" } }, [
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-lg-12 col-md-12" }, [
-          _c(
-            "div",
-            { staticClass: "latest_newsarea", staticStyle: { height: "40px" } },
-            [
-              _c(
-                "span",
-                { staticStyle: { background: "#000", height: "40px" } },
-                [_vm._v("Latest News")]
-              ),
-              _vm._v(" "),
-              _c(
-                "ul",
-                { staticClass: "news_sticker", attrs: { id: "ticker01" } },
-                _vm._l(_vm.getargentPost, function(argent, index) {
-                  return index < 11
-                    ? _c("li", { staticStyle: { "font-size": "15px" } }, [
-                        _c("a", { attrs: { href: "#" } }, [
-                          _c("img", {
-                            attrs: {
-                              src: "`upload/postimage/${argent.image}`",
-                              alt: ""
-                            }
-                          }),
-                          _vm._v(
-                            _vm._s(
-                              _vm._f("shortlength")(argent.title, 90, ".......")
-                            )
-                          )
-                        ])
+  return _c(
+    "div",
+    { attrs: { id: "single" } },
+    [
+      _c("Header"),
+      _vm._v(" "),
+      _c("section", { attrs: { id: "contentSection" } }, [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-lg-8 col-md-8 col-sm-8" }, [
+            _c("div", { staticClass: "left_content" }, [
+              _c("div", { staticClass: "single_page" }, [
+                _c("ol", { staticClass: "breadcrumb" }, [
+                  _c(
+                    "li",
+                    [
+                      _c("router-link", { attrs: { to: "/" } }, [
+                        _vm._v("Home")
                       ])
-                    : _vm._e()
-                }),
-                0
-              ),
-              _vm._v(" "),
-              _vm._m(2)
-            ]
-          )
-        ])
-      ])
-    ]),
-    _vm._v(" "),
-    _c("section", { attrs: { id: "contentSection" } }, [
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-lg-8 col-md-8 col-sm-8" }, [
-          _c("div", { staticClass: "left_content" }, [
-            _c("div", { staticClass: "single_page" }, [
-              _c("ol", { staticClass: "breadcrumb" }, [
-                _c(
-                  "li",
-                  [_c("router-link", { attrs: { to: "/" } }, [_vm._v("Home")])],
-                  1
-                ),
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c("li", [
+                    _c("a", { attrs: { href: "#" } }, [
+                      _vm._v(_vm._s(_vm.getsinglePost.category.name))
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("li", { staticClass: "active" }, [
+                    _vm._v(_vm._s(_vm.getsinglePost.subcategory.name))
+                  ])
+                ]),
                 _vm._v(" "),
-                _c("li", [
+                _c("h1", [_vm._v(_vm._s(_vm.getsinglePost.title))]),
+                _vm._v(" "),
+                _c("div", { staticClass: "post_commentbox" }, [
                   _c("a", { attrs: { href: "#" } }, [
+                    _c("i", { staticClass: "fa fa-user" }),
+                    _vm._v(_vm._s(_vm.getsinglePost.user.name))
+                  ]),
+                  _vm._v(" "),
+                  _c("span", [
+                    _c("i", { staticClass: "fa fa-calendar" }),
+                    _vm._v(
+                      _vm._s(_vm._f("timeformat")(_vm.getsinglePost.created_at))
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("a", { attrs: { href: "#" } }, [
+                    _c("i", { staticClass: "fa fa-tags" }),
                     _vm._v(_vm._s(_vm.getsinglePost.category.name))
                   ])
                 ]),
                 _vm._v(" "),
-                _c("li", { staticClass: "active" }, [
-                  _vm._v(_vm._s(_vm.getsinglePost.subcategory.name))
-                ])
-              ]),
-              _vm._v(" "),
-              _c("h1", [_vm._v(_vm._s(_vm.getsinglePost.title))]),
-              _vm._v(" "),
-              _c("div", { staticClass: "post_commentbox" }, [
-                _c("a", { attrs: { href: "#" } }, [
-                  _c("i", { staticClass: "fa fa-user" }),
-                  _vm._v(_vm._s(_vm.getsinglePost.user.name))
+                _c("div", { staticClass: "single_page_content" }, [
+                  _c("img", {
+                    staticClass: "img-center",
+                    attrs: {
+                      src: "upload/postimage/" + _vm.getsinglePost.image,
+                      alt: ""
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("p", [_vm._v(_vm._s(_vm.getsinglePost.description))])
                 ]),
                 _vm._v(" "),
-                _c("span", [
-                  _c("i", { staticClass: "fa fa-calendar" }),
-                  _vm._v(
-                    _vm._s(_vm._f("timeformat")(_vm.getsinglePost.created_at))
-                  )
-                ]),
+                _vm._m(0),
                 _vm._v(" "),
-                _c("a", { attrs: { href: "#" } }, [
-                  _c("i", { staticClass: "fa fa-tags" }),
-                  _vm._v(_vm._s(_vm.getsinglePost.category.name))
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "single_page_content" }, [
-                _c("img", {
-                  staticClass: "img-center",
-                  attrs: {
-                    src: "upload/postimage/" + _vm.getsinglePost.image,
-                    alt: ""
-                  }
-                }),
-                _vm._v(" "),
-                _c("p", [_vm._v(_vm._s(_vm.getsinglePost.description))])
-              ]),
-              _vm._v(" "),
-              _vm._m(3),
-              _vm._v(" "),
-              _vm._m(4)
+                _vm._m(1)
+              ])
             ])
-          ])
-        ]),
-        _vm._v(" "),
-        _vm._m(5),
-        _vm._v(" "),
-        _vm._m(6)
+          ]),
+          _vm._v(" "),
+          _vm._m(2),
+          _vm._v(" "),
+          _vm._m(3)
+        ])
       ])
-    ])
-  ])
+    ],
+    1
+  )
 }
 var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("header", { attrs: { id: "header" } }, [
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-lg-12 col-md-12 col-sm-12" }, [
-          _c("div", { staticClass: "header_top" }, [
-            _c("div", { staticClass: "header_top_left" }, [
-              _c("ul", { staticClass: "top_nav" }, [
-                _c("li", [_c("a", { attrs: { href: "" } }, [_vm._v("Home")])]),
-                _vm._v(" "),
-                _c("li", [
-                  _c("a", { attrs: { href: "#" } }, [_vm._v("About")])
-                ]),
-                _vm._v(" "),
-                _c("li", [
-                  _c("a", { attrs: { href: "contact.html" } }, [
-                    _vm._v("Contact")
-                  ])
-                ])
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "header_top_right" }, [
-              _c("p", [_vm._v("Friday, December 05, 2045")])
-            ])
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-lg-12 col-md-12 col-sm-12" }, [
-          _c("div", { staticClass: "header_bottom" }, [
-            _c("div", { staticClass: "logo_area" }, [
-              _c("a", { staticClass: "logo", attrs: { href: "" } }, [
-                _c("img", { attrs: { src: "", alt: "" } })
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "add_banner" }, [
-              _c("a", { attrs: { href: "#" } }, [
-                _c("img", { attrs: { src: "", alt: "" } })
-              ])
-            ])
-          ])
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("section", { attrs: { id: "navArea" } }, [
-      _c(
-        "nav",
-        { staticClass: "navbar navbar-inverse", attrs: { role: "navigation" } },
-        [
-          _c("div", { staticClass: "navbar-header" }, [
-            _c(
-              "button",
-              {
-                staticClass: "navbar-toggle collapsed",
-                attrs: {
-                  type: "button",
-                  "data-toggle": "collapse",
-                  "data-target": "#navbar",
-                  "aria-expanded": "false",
-                  "aria-controls": "navbar"
-                }
-              },
-              [
-                _c("span", { staticClass: "sr-only" }, [
-                  _vm._v("Toggle navigation")
-                ]),
-                _vm._v(" "),
-                _c("span", { staticClass: "icon-bar" }),
-                _vm._v(" "),
-                _c("span", { staticClass: "icon-bar" }),
-                _vm._v(" "),
-                _c("span", { staticClass: "icon-bar" })
-              ]
-            )
-          ]),
-          _vm._v(" "),
-          _c(
-            "div",
-            {
-              staticClass: "navbar-collapse collapse",
-              attrs: { id: "navbar" }
-            },
-            [
-              _c("ul", { staticClass: "nav navbar-nav main_nav" }, [
-                _c("li", { staticClass: "active" }, [
-                  _c("a", { attrs: { href: "" } }, [
-                    _c("span", { staticClass: "fa fa-home desktop-home" }),
-                    _c("span", { staticClass: "mobile-show" }, [_vm._v("Home")])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("li", [
-                  _c("a", { attrs: { href: "#" } }, [_vm._v("Technology")])
-                ]),
-                _vm._v(" "),
-                _c("li", { staticClass: "dropdown" }, [
-                  _c(
-                    "a",
-                    {
-                      staticClass: "dropdown-toggle",
-                      attrs: {
-                        href: "#",
-                        "data-toggle": "dropdown",
-                        role: "button",
-                        "aria-expanded": "false"
-                      }
-                    },
-                    [_vm._v("Mobile")]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "ul",
-                    { staticClass: "dropdown-menu", attrs: { role: "menu" } },
-                    [
-                      _c("li", [
-                        _c("a", { attrs: { href: "#" } }, [_vm._v("Android")])
-                      ]),
-                      _vm._v(" "),
-                      _c("li", [
-                        _c("a", { attrs: { href: "#" } }, [_vm._v("Samsung")])
-                      ]),
-                      _vm._v(" "),
-                      _c("li", [
-                        _c("a", { attrs: { href: "#" } }, [_vm._v("Nokia")])
-                      ]),
-                      _vm._v(" "),
-                      _c("li", [
-                        _c("a", { attrs: { href: "#" } }, [
-                          _vm._v("Walton Mobile")
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("li", [
-                        _c("a", { attrs: { href: "#" } }, [_vm._v("Sympony")])
-                      ])
-                    ]
-                  )
-                ]),
-                _vm._v(" "),
-                _c("li", [
-                  _c("a", { attrs: { href: "#" } }, [_vm._v("Laptops")])
-                ]),
-                _vm._v(" "),
-                _c("li", [
-                  _c("a", { attrs: { href: "#" } }, [_vm._v("Tablets")])
-                ]),
-                _vm._v(" "),
-                _c("li", [
-                  _c("a", { attrs: { href: "contact.html" } }, [
-                    _vm._v("Contact Us")
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("li", [
-                  _c("a", { attrs: { href: "404.html" } }, [_vm._v("404 Page")])
-                ])
-              ])
-            ]
-          )
-        ]
-      )
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      {
-        staticClass: "social_area",
-        staticStyle: { height: "40px", "padding-top": "3px" }
-      },
-      [
-        _c("ul", { staticClass: "social_nav" }, [
-          _c("li", { staticClass: "facebook" }, [
-            _c("a", { attrs: { href: "#" } })
-          ]),
-          _vm._v(" "),
-          _c("li", { staticClass: "twitter" }, [
-            _c("a", { attrs: { href: "#" } })
-          ]),
-          _vm._v(" "),
-          _c("li", { staticClass: "flickr" }, [
-            _c("a", { attrs: { href: "#" } })
-          ]),
-          _vm._v(" "),
-          _c("li", { staticClass: "pinterest" }, [
-            _c("a", { attrs: { href: "#" } })
-          ]),
-          _vm._v(" "),
-          _c("li", { staticClass: "googleplus" }, [
-            _c("a", { attrs: { href: "#" } })
-          ]),
-          _vm._v(" "),
-          _c("li", { staticClass: "vimeo" }, [
-            _c("a", { attrs: { href: "#" } })
-          ]),
-          _vm._v(" "),
-          _c("li", { staticClass: "youtube" }, [
-            _c("a", { attrs: { href: "#" } })
-          ]),
-          _vm._v(" "),
-          _c("li", { staticClass: "mail" }, [_c("a", { attrs: { href: "#" } })])
-        ])
-      ]
-    )
-  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
@@ -81495,9 +80742,78 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { attrs: { id: "publicheader" } }, [
-    _vm._m(0),
+    _c("header", { attrs: { id: "header" } }, [
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col-lg-12 col-md-12 col-sm-12" }, [
+          _c("div", { staticClass: "header_top" }, [
+            _c("div", { staticClass: "header_top_left" }, [
+              _c("ul", { staticClass: "top_nav" }, [
+                _c(
+                  "li",
+                  [_c("router-link", { attrs: { to: "/" } }, [_vm._v("Home")])],
+                  1
+                ),
+                _vm._v(" "),
+                _vm._m(0),
+                _vm._v(" "),
+                _vm._m(1)
+              ])
+            ]),
+            _vm._v(" "),
+            _vm._m(2)
+          ])
+        ]),
+        _vm._v(" "),
+        _vm._m(3)
+      ])
+    ]),
     _vm._v(" "),
-    _vm._m(1),
+    _c("section", { attrs: { id: "navArea" } }, [
+      _c(
+        "nav",
+        { staticClass: "navbar navbar-inverse", attrs: { role: "navigation" } },
+        [
+          _vm._m(4),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              staticClass: "navbar-collapse collapse",
+              attrs: { id: "navbar" }
+            },
+            [
+              _c("ul", { staticClass: "nav navbar-nav main_nav" }, [
+                _c(
+                  "li",
+                  { staticClass: "active" },
+                  [
+                    _c("router-link", { attrs: { to: "/" } }, [
+                      _c("span", { staticClass: "fa fa-home desktop-home" }),
+                      _c("span", { staticClass: "mobile-show" }, [
+                        _vm._v("Home")
+                      ])
+                    ])
+                  ],
+                  1
+                ),
+                _vm._v(" "),
+                _vm._m(5),
+                _vm._v(" "),
+                _vm._m(6),
+                _vm._v(" "),
+                _vm._m(7),
+                _vm._v(" "),
+                _vm._m(8),
+                _vm._v(" "),
+                _vm._m(9),
+                _vm._v(" "),
+                _vm._m(10)
+              ])
+            ]
+          )
+        ]
+      )
+    ]),
     _vm._v(" "),
     _c("section", { attrs: { id: "newsSection" } }, [
       _c("div", { staticClass: "row" }, [
@@ -81515,100 +80831,44 @@ var render = function() {
               _c(
                 "ul",
                 { staticClass: "news_sticker", attrs: { id: "ticker01" } },
-                _vm._l(_vm.getlatestPost, function(latest, index) {
-                  return index < 11
-                    ? _c("li", { staticStyle: { "font-size": "15px" } }, [
-                        _c("a", { attrs: { href: "#" } }, [
-                          _c("img", {
-                            attrs: {
-                              src: "`upload/postimage/${latest.image}`",
-                              alt: ""
-                            }
-                          }),
-                          _vm._v(
-                            _vm._s(
-                              _vm._f("shortlength")(latest.title, 90, ".......")
-                            )
-                          )
-                        ])
-                      ])
-                    : _vm._e()
-                }),
-                0
-              ),
-              _vm._v(" "),
-              _vm._m(2)
-            ]
-          )
-        ])
-      ])
-    ]),
-    _vm._v(" "),
-    _c("section", { attrs: { id: "sliderSection" } }, [
-      _c("div", { staticClass: "row" }, [
-        _vm._m(3),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-lg-4 col-md-4 col-sm-4" }, [
-          _c("div", { staticClass: "latest_post" }, [
-            _vm._m(4),
-            _vm._v(" "),
-            _c("div", { staticClass: "latest_post_container" }, [
-              _vm._m(5),
-              _vm._v(" "),
-              _c(
-                "ul",
-                { staticClass: "latest_postnav" },
-                _vm._l(_vm.getlatestPost, function(latest, index) {
-                  return index < 11
-                    ? _c("li", [
-                        _c("div", { staticClass: "media" }, [
+                _vm._l(_vm.getargentPost, function(argent, index) {
+                  return index < 4
+                    ? _c(
+                        "li",
+                        { staticStyle: { "font-size": "15px" } },
+                        [
                           _c(
-                            "a",
-                            {
-                              staticClass: "media-left",
-                              attrs: { href: "pages/single_page.html" }
-                            },
+                            "router-link",
+                            { attrs: { to: "/post/" + argent.slug } },
                             [
                               _c("img", {
                                 attrs: {
-                                  alt: "",
-                                  src: "upload/postimage/" + latest.image
+                                  src: "`upload/postimage/${argent.image}`",
+                                  alt: ""
                                 }
-                              })
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "media-body" }, [
-                            _c(
-                              "a",
-                              {
-                                staticClass: "catg_title",
-                                attrs: { href: "pages/single_page.html" }
-                              },
-                              [
-                                _vm._v(
-                                  " " +
-                                    _vm._s(
-                                      _vm._f("shortlength")(
-                                        latest.title,
-                                        90,
-                                        "......."
-                                      )
-                                    )
+                              }),
+                              _vm._v(
+                                _vm._s(
+                                  _vm._f("shortlength")(
+                                    argent.title,
+                                    90,
+                                    "......."
+                                  )
                                 )
-                              ]
-                            )
-                          ])
-                        ])
-                      ])
+                              )
+                            ]
+                          )
+                        ],
+                        1
+                      )
                     : _vm._e()
                 }),
                 0
               ),
               _vm._v(" "),
-              _vm._m(6)
-            ])
-          ])
+              _vm._m(11)
+            ]
+          )
         ])
       ])
     ])
@@ -81619,49 +80879,41 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("header", { attrs: { id: "header" } }, [
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-lg-12 col-md-12 col-sm-12" }, [
-          _c("div", { staticClass: "header_top" }, [
-            _c("div", { staticClass: "header_top_left" }, [
-              _c("ul", { staticClass: "top_nav" }, [
-                _c("li", [
-                  _c("a", { attrs: { href: "index.html" } }, [_vm._v("Home")])
-                ]),
-                _vm._v(" "),
-                _c("li", [
-                  _c("a", { attrs: { href: "#" } }, [_vm._v("About")])
-                ]),
-                _vm._v(" "),
-                _c("li", [
-                  _c("a", { attrs: { href: "pages/contact.html" } }, [
-                    _vm._v("Contact")
-                  ])
-                ])
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "header_top_right" }, [
-              _c("p", [_vm._v("Friday, December 05, 2045")])
-            ])
+    return _c("li", [_c("a", { attrs: { href: "#" } }, [_vm._v("About")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", [
+      _c("a", { attrs: { href: "pages/contact.html" } }, [_vm._v("Contact")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "header_top_right" }, [
+      _c("p", [_vm._v("Friday, December 05, 2045")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-lg-12 col-md-12 col-sm-12" }, [
+      _c("div", { staticClass: "header_bottom" }, [
+        _c("div", { staticClass: "logo_area" }, [
+          _c("a", { staticClass: "logo", attrs: { href: "index.html" } }, [
+            _c("img", { attrs: { src: "images/logo.jpg", alt: "" } })
           ])
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "col-lg-12 col-md-12 col-sm-12" }, [
-          _c("div", { staticClass: "header_bottom" }, [
-            _c("div", { staticClass: "logo_area" }, [
-              _c("a", { staticClass: "logo", attrs: { href: "index.html" } }, [
-                _c("img", { attrs: { src: "images/logo.jpg", alt: "" } })
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "add_banner" }, [
-              _c("a", { attrs: { href: "#" } }, [
-                _c("img", {
-                  attrs: { src: "images/addbanner_728x90_V1.jpg", alt: "" }
-                })
-              ])
-            ])
+        _c("div", { staticClass: "add_banner" }, [
+          _c("a", { attrs: { href: "#" } }, [
+            _c("img", {
+              attrs: { src: "images/addbanner_728x90_V1.jpg", alt: "" }
+            })
           ])
         ])
       ])
@@ -81671,125 +80923,97 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("section", { attrs: { id: "navArea" } }, [
+    return _c("div", { staticClass: "navbar-header" }, [
       _c(
-        "nav",
-        { staticClass: "navbar navbar-inverse", attrs: { role: "navigation" } },
+        "button",
+        {
+          staticClass: "navbar-toggle collapsed",
+          attrs: {
+            type: "button",
+            "data-toggle": "collapse",
+            "data-target": "#navbar",
+            "aria-expanded": "false",
+            "aria-controls": "navbar"
+          }
+        },
         [
-          _c("div", { staticClass: "navbar-header" }, [
-            _c(
-              "button",
-              {
-                staticClass: "navbar-toggle collapsed",
-                attrs: {
-                  type: "button",
-                  "data-toggle": "collapse",
-                  "data-target": "#navbar",
-                  "aria-expanded": "false",
-                  "aria-controls": "navbar"
-                }
-              },
-              [
-                _c("span", { staticClass: "sr-only" }, [
-                  _vm._v("Toggle navigation")
-                ]),
-                _vm._v(" "),
-                _c("span", { staticClass: "icon-bar" }),
-                _vm._v(" "),
-                _c("span", { staticClass: "icon-bar" }),
-                _vm._v(" "),
-                _c("span", { staticClass: "icon-bar" })
-              ]
-            )
-          ]),
+          _c("span", { staticClass: "sr-only" }, [_vm._v("Toggle navigation")]),
           _vm._v(" "),
-          _c(
-            "div",
-            {
-              staticClass: "navbar-collapse collapse",
-              attrs: { id: "navbar" }
-            },
-            [
-              _c("ul", { staticClass: "nav navbar-nav main_nav" }, [
-                _c("li", { staticClass: "active" }, [
-                  _c("a", { attrs: { href: "index.html" } }, [
-                    _c("span", { staticClass: "fa fa-home desktop-home" }),
-                    _c("span", { staticClass: "mobile-show" }, [_vm._v("Home")])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("li", [
-                  _c("a", { attrs: { href: "#" } }, [_vm._v("Technology")])
-                ]),
-                _vm._v(" "),
-                _c("li", { staticClass: "dropdown" }, [
-                  _c(
-                    "a",
-                    {
-                      staticClass: "dropdown-toggle",
-                      attrs: {
-                        href: "#",
-                        "data-toggle": "dropdown",
-                        role: "button",
-                        "aria-expanded": "false"
-                      }
-                    },
-                    [_vm._v("Mobile")]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "ul",
-                    { staticClass: "dropdown-menu", attrs: { role: "menu" } },
-                    [
-                      _c("li", [
-                        _c("a", { attrs: { href: "#" } }, [_vm._v("Android")])
-                      ]),
-                      _vm._v(" "),
-                      _c("li", [
-                        _c("a", { attrs: { href: "#" } }, [_vm._v("Samsung")])
-                      ]),
-                      _vm._v(" "),
-                      _c("li", [
-                        _c("a", { attrs: { href: "#" } }, [_vm._v("Nokia")])
-                      ]),
-                      _vm._v(" "),
-                      _c("li", [
-                        _c("a", { attrs: { href: "#" } }, [
-                          _vm._v("Walton Mobile")
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("li", [
-                        _c("a", { attrs: { href: "#" } }, [_vm._v("Sympony")])
-                      ])
-                    ]
-                  )
-                ]),
-                _vm._v(" "),
-                _c("li", [
-                  _c("a", { attrs: { href: "#" } }, [_vm._v("Laptops")])
-                ]),
-                _vm._v(" "),
-                _c("li", [
-                  _c("a", { attrs: { href: "#" } }, [_vm._v("Tablets")])
-                ]),
-                _vm._v(" "),
-                _c("li", [
-                  _c("a", { attrs: { href: "pages/contact.html" } }, [
-                    _vm._v("Contact Us")
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("li", [
-                  _c("a", { attrs: { href: "pages/404.html" } }, [
-                    _vm._v("404 Page")
-                  ])
-                ])
-              ])
-            ]
-          )
+          _c("span", { staticClass: "icon-bar" }),
+          _vm._v(" "),
+          _c("span", { staticClass: "icon-bar" }),
+          _vm._v(" "),
+          _c("span", { staticClass: "icon-bar" })
         ]
       )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", [_c("a", { attrs: { href: "#" } }, [_vm._v("Technology")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", { staticClass: "dropdown" }, [
+      _c(
+        "a",
+        {
+          staticClass: "dropdown-toggle",
+          attrs: {
+            href: "#",
+            "data-toggle": "dropdown",
+            role: "button",
+            "aria-expanded": "false"
+          }
+        },
+        [_vm._v("Mobile")]
+      ),
+      _vm._v(" "),
+      _c("ul", { staticClass: "dropdown-menu", attrs: { role: "menu" } }, [
+        _c("li", [_c("a", { attrs: { href: "#" } }, [_vm._v("Android")])]),
+        _vm._v(" "),
+        _c("li", [_c("a", { attrs: { href: "#" } }, [_vm._v("Samsung")])]),
+        _vm._v(" "),
+        _c("li", [_c("a", { attrs: { href: "#" } }, [_vm._v("Nokia")])]),
+        _vm._v(" "),
+        _c("li", [
+          _c("a", { attrs: { href: "#" } }, [_vm._v("Walton Mobile")])
+        ]),
+        _vm._v(" "),
+        _c("li", [_c("a", { attrs: { href: "#" } }, [_vm._v("Sympony")])])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", [_c("a", { attrs: { href: "#" } }, [_vm._v("Laptops")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", [_c("a", { attrs: { href: "#" } }, [_vm._v("Tablets")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", [
+      _c("a", { attrs: { href: "pages/contact.html" } }, [_vm._v("Contact Us")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", [
+      _c("a", { attrs: { href: "pages/404.html" } }, [_vm._v("404 Page")])
     ])
   },
   function() {
@@ -81836,45 +81060,184 @@ var staticRenderFns = [
         ])
       ]
     )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-lg-8 col-md-8 col-sm-8" }, [
-      _c("div", { staticClass: "slick_slider" }, [
-        _c("div", { staticClass: "single_iteam" }, [
-          _c("a", { attrs: { href: "pages/single_page.html" } }, [
-            _c("img", { attrs: { src: "images/slider_img4.jpg", alt: "" } })
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "slider_article" }, [
-            _c("h2", [
-              _c(
-                "a",
-                {
-                  staticClass: "slider_tittle",
-                  attrs: { href: "pages/single_page.html" }
-                },
-                [_vm._v("Fusce eu nulla semper porttitor felis sit amet")]
-              )
-            ]),
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/public/blog/slider.vue?vue&type=template&id=7225c2d3&":
+/*!*********************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/public/blog/slider.vue?vue&type=template&id=7225c2d3& ***!
+  \*********************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { attrs: { id: "slider" } }, [
+    _c("section", { attrs: { id: "sliderSection" } }, [
+      _c("div", { staticClass: "row" }, [
+        _c(
+          "div",
+          { staticClass: "col-lg-8 col-md-8 col-sm-8" },
+          _vm._l(_vm.getsliderPost, function(slider, index) {
+            return index < 1
+              ? _c("div", { staticClass: "slick_slider" }, [
+                  _c(
+                    "div",
+                    { staticClass: "single_iteam" },
+                    [
+                      _c(
+                        "router-link",
+                        { attrs: { to: "/post/" + slider.slug } },
+                        [
+                          _c("img", {
+                            attrs: {
+                              src: "upload/postimage/" + slider.image,
+                              alt: ""
+                            }
+                          })
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "slider_article" }, [
+                        _c(
+                          "h2",
+                          [
+                            _c(
+                              "router-link",
+                              {
+                                staticClass: "slider_tittle",
+                                attrs: { to: "/post/" + slider.slug }
+                              },
+                              [
+                                _vm._v(
+                                  _vm._s(
+                                    _vm._f("shortlength")(
+                                      slider.title,
+                                      90,
+                                      "......."
+                                    )
+                                  )
+                                )
+                              ]
+                            )
+                          ],
+                          1
+                        ),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            _vm._s(
+                              _vm._f("shortlength")(
+                                slider.description,
+                                90,
+                                "......."
+                              )
+                            )
+                          )
+                        ])
+                      ])
+                    ],
+                    1
+                  )
+                ])
+              : _vm._e()
+          }),
+          0
+        ),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-lg-4 col-md-4 col-sm-4" }, [
+          _c("div", { staticClass: "latest_post" }, [
+            _vm._m(0),
             _vm._v(" "),
-            _c("p", [
-              _vm._v(
-                "Nunc tincidunt, elit non cursus euismod, lacus augue ornare metus, egestas imperdiet nulla nisl quis mauris. Suspendisse a pharetra urna. Morbi dui..."
-              )
+            _c("div", { staticClass: "latest_post_container" }, [
+              _vm._m(1),
+              _vm._v(" "),
+              _c(
+                "ul",
+                { staticClass: "latest_postnav" },
+                _vm._l(_vm.getlatestPost, function(latest, index) {
+                  return index < 11
+                    ? _c("li", [
+                        _c(
+                          "div",
+                          { staticClass: "media" },
+                          [
+                            _c(
+                              "router-link",
+                              {
+                                staticClass: "media-left",
+                                attrs: { to: "/post/" + latest.slug }
+                              },
+                              [
+                                _c("img", {
+                                  attrs: {
+                                    alt: "",
+                                    src: "upload/postimage/" + latest.image
+                                  }
+                                })
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "div",
+                              { staticClass: "media-body" },
+                              [
+                                _c(
+                                  "router-link",
+                                  {
+                                    staticClass: "catg_title",
+                                    attrs: { to: "/post/" + latest.slug }
+                                  },
+                                  [
+                                    _vm._v(
+                                      " " +
+                                        _vm._s(
+                                          _vm._f("shortlength")(
+                                            latest.title,
+                                            90,
+                                            "......."
+                                          )
+                                        )
+                                    )
+                                  ]
+                                )
+                              ],
+                              1
+                            )
+                          ],
+                          1
+                        )
+                      ])
+                    : _vm._e()
+                }),
+                0
+              ),
+              _vm._v(" "),
+              _vm._m(2)
             ])
           ])
         ])
       ])
     ])
-  },
+  ])
+}
+var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("h2", [_c("span", [_vm._v("Latest post")])])
+    return _c("h2", [_c("span", [_vm._v("Latest Post")])])
   },
   function() {
     var _vm = this
@@ -100694,6 +100057,75 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/public/blog/slider.vue":
+/*!********************************************************!*\
+  !*** ./resources/js/components/public/blog/slider.vue ***!
+  \********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _slider_vue_vue_type_template_id_7225c2d3___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./slider.vue?vue&type=template&id=7225c2d3& */ "./resources/js/components/public/blog/slider.vue?vue&type=template&id=7225c2d3&");
+/* harmony import */ var _slider_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./slider.vue?vue&type=script&lang=js& */ "./resources/js/components/public/blog/slider.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _slider_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _slider_vue_vue_type_template_id_7225c2d3___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _slider_vue_vue_type_template_id_7225c2d3___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/public/blog/slider.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/public/blog/slider.vue?vue&type=script&lang=js&":
+/*!*********************************************************************************!*\
+  !*** ./resources/js/components/public/blog/slider.vue?vue&type=script&lang=js& ***!
+  \*********************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_slider_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../node_modules/vue-loader/lib??vue-loader-options!./slider.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/public/blog/slider.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_slider_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/public/blog/slider.vue?vue&type=template&id=7225c2d3&":
+/*!***************************************************************************************!*\
+  !*** ./resources/js/components/public/blog/slider.vue?vue&type=template&id=7225c2d3& ***!
+  \***************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_slider_vue_vue_type_template_id_7225c2d3___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../node_modules/vue-loader/lib??vue-loader-options!./slider.vue?vue&type=template&id=7225c2d3& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/public/blog/slider.vue?vue&type=template&id=7225c2d3&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_slider_vue_vue_type_template_id_7225c2d3___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_slider_vue_vue_type_template_id_7225c2d3___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
 /***/ "./resources/js/routes.js":
 /*!********************************!*\
   !*** ./resources/js/routes.js ***!
@@ -100851,7 +100283,7 @@ var routes = [{
   component: _components_public_PublicHome_vue__WEBPACK_IMPORTED_MODULE_24__["default"]
 }, // { path: '/blog', component: PublicBlog }, 
 {
-  path: '/blog/:id',
+  path: '/post/:id',
   component: _components_public_blog_SingleBlog_vue__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   path: '/categories/:id',

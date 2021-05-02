@@ -65,8 +65,8 @@
       </div>
     </div>
     <div class="footer_bottom">
-      <p class="copyright">Copyright &copy; 2045 <a href="index.html">NewsFeed</a></p>
-      <p class="developer">Developed By Wpfreeware</p>
+      <p class="copyright">Copyright &copy; 2045 <a href="index.html">SSB IT Software</a></p>
+      <p class="developer">Developed By SSB IT Software</p>
     </div>
   </footer>
 </div>
