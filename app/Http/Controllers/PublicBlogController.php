@@ -18,6 +18,13 @@ class PublicBlogController extends Controller
       return response()->json(['schoolcollege'=>$sc_posts],200);
     }
 
+    public function singlepostById($slug)
+    {
+
+      $singlePost = Post::with('user','category','subcategory')->where('slug',$slug)->first();
+      return response()->json(['singlePost'=>$singlePost],200);
+    }
+
      public function latestPost()
     {
       $latestposts = Post::with('user','category','subcategory')->orderBy('id','DESC')->get();
@@ -66,15 +73,24 @@ class PublicBlogController extends Controller
       return response()->json(['pjPosts'=>$pjposts],200);
     }
 
-
-
-
-     public function singlepostById($slug)
+     public function popularPost()
     {
-
-      $singlePost = Post::with('user','category','subcategory')->where('slug',$slug)->first();
-      return response()->json(['singlePost'=>$singlePost],200);
+      $popularposts =Post::inRandomOrder()->with('user','category','subcategory')->orderBy('id','DESC')->get();
+      return response()->json(['popularPosts'=>$popularposts],200);
     }
+
+     public function releatedPost()
+    {
+      $post = Post::all();
+      $releatedposts = Post::where('category_id',$post->category_id)->inRandomOrder()->get();
+      return response()->json(['releatedPosts'=>$releatedposts],200);
+    }
+
+
+
+
+
+     
 
      public function categoryIdByPost($id)
     {

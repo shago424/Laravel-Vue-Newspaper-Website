@@ -226,6 +226,7 @@ mounted(){
  this.$store.dispatch('getsportsPost')
  this.$store.dispatch('getgjPost')
  this.$store.dispatch('getpjPost')
+ 
 },
 
 computed:{

@@ -55,7 +55,10 @@
       <div class="col-lg-12 col-md-12">
         <div class="latest_newsarea" style="height: 40px;"> <span style="background: #000;height: 40px;">Latest News</span>
           <ul id="ticker01" class="news_sticker">
-            <li v-for="(argent,index) in getargentPost" v-if="index<4" style="font-size:15px"><router-link :to="`/post/${argent.slug}`"><img src="`upload/postimage/${argent.image}`" alt="">{{ argent.title | shortlength(90,".......")}}</router-link></li>
+             <li style="font-size:15px"><a href="#"><img src="images/news_thumbnail3.jpg" alt="">My First News Item</a></li>
+            <li style="font-size:15px"><a href="#"><img src="images/news_thumbnail3.jpg" alt="">My Second News Item</a></li>
+            <li style="font-size:15px"><a href="#"><img src="images/news_thumbnail3.jpg" alt="">My First News Item</a></li>
+            <li style="font-size:15px"><a href="#"><img src="images/news_thumbnail3.jpg" alt="">My Second News Item</a></li>
            
             
           </ul>

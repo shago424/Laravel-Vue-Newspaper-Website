@@ -6623,19 +6623,10 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _header_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./header.vue */ "./resources/js/components/public/blog/header.vue");
-var _name$components$data;
+var _computed, _name$components$data;
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -6832,18 +6823,22 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     };
   },
   mounted: function mounted() {
-    this.$store.dispatch('getschoolCollege');
+    this.$store.dispatch('getreleatedPost');
+    this.$store.dispatch('getpopularPost');
     this.$store.dispatch('getlatestPost');
-    this.$store.dispatch('getargentPost');
   },
-  computed: {
+  computed: (_computed = {
     getsinglePost: function getsinglePost() {
       return this.$store.getters.singlePost;
     },
-    getargentPost: function getargentPost() {
-      return this.$store.getters.argentPost;
+    getreleatedPost: function getreleatedPost() {
+      return this.$store.getters.releatedPost;
     }
-  },
+  }, _defineProperty(_computed, "getreleatedPost", function getreleatedPost() {
+    return this.$store.getters.releatedPost;
+  }), _defineProperty(_computed, "getpopularPost", function getpopularPost() {
+    return this.$store.getters.popularPost;
+  }), _computed),
   methods: {
     singlePost: function singlePost() {
       this.$store.dispatch('getsinglePostbyId', this.$route.params.id);
@@ -6870,6 +6865,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
 /* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);
+//
+//
+//
 //
 //
 //
@@ -80158,14 +80156,42 @@ var render = function() {
                 _vm._v(" "),
                 _vm._m(0),
                 _vm._v(" "),
-                _vm._m(1)
+                _c("div", { staticClass: "related_post" }, [
+                  _vm._m(1),
+                  _vm._v(" "),
+                  _c(
+                    "ul",
+                    { staticClass: "spost_nav wow fadeInDown animated" },
+                    _vm._l(_vm.getreleatedPost, function(releated, index) {
+                      return index < 10
+                        ? _c("li", [
+                            _c("div", { staticClass: "media" }, [
+                              _vm._m(2, true),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "media-body" }, [
+                                _c(
+                                  "a",
+                                  {
+                                    staticClass: "catg_title",
+                                    attrs: { href: "single_page.html" }
+                                  },
+                                  [_vm._v(" " + _vm._s(releated.title))]
+                                )
+                              ])
+                            ])
+                          ])
+                        : _vm._e()
+                    }),
+                    0
+                  )
+                ])
               ])
             ])
           ]),
           _vm._v(" "),
-          _vm._m(2),
+          _vm._m(3),
           _vm._v(" "),
-          _vm._m(3)
+          _vm._m(4)
         ])
       ])
     ],
@@ -80215,86 +80241,20 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "related_post" }, [
-      _c("h2", [
-        _vm._v("Related Post "),
-        _c("i", { staticClass: "fa fa-thumbs-o-up" })
-      ]),
-      _vm._v(" "),
-      _c("ul", { staticClass: "spost_nav wow fadeInDown animated" }, [
-        _c("li", [
-          _c("div", { staticClass: "media" }, [
-            _c(
-              "a",
-              {
-                staticClass: "media-left",
-                attrs: { href: "single_page.html" }
-              },
-              [_c("img", { attrs: { src: "", alt: "" } })]
-            ),
-            _vm._v(" "),
-            _c("div", { staticClass: "media-body" }, [
-              _c(
-                "a",
-                {
-                  staticClass: "catg_title",
-                  attrs: { href: "single_page.html" }
-                },
-                [_vm._v(" Aliquam malesuada diam eget turpis varius")]
-              )
-            ])
-          ])
-        ]),
-        _vm._v(" "),
-        _c("li", [
-          _c("div", { staticClass: "media" }, [
-            _c(
-              "a",
-              {
-                staticClass: "media-left",
-                attrs: { href: "single_page.html" }
-              },
-              [_c("img", { attrs: { src: "", alt: "" } })]
-            ),
-            _vm._v(" "),
-            _c("div", { staticClass: "media-body" }, [
-              _c(
-                "a",
-                {
-                  staticClass: "catg_title",
-                  attrs: { href: "single_page.html" }
-                },
-                [_vm._v(" Aliquam malesuada diam eget turpis varius")]
-              )
-            ])
-          ])
-        ]),
-        _vm._v(" "),
-        _c("li", [
-          _c("div", { staticClass: "media" }, [
-            _c(
-              "a",
-              {
-                staticClass: "media-left",
-                attrs: { href: "single_page.html" }
-              },
-              [_c("img", { attrs: { src: "", alt: "" } })]
-            ),
-            _vm._v(" "),
-            _c("div", { staticClass: "media-body" }, [
-              _c(
-                "a",
-                {
-                  staticClass: "catg_title",
-                  attrs: { href: "single_page.html" }
-                },
-                [_vm._v(" Aliquam malesuada diam eget turpis varius")]
-              )
-            ])
-          ])
-        ])
-      ])
+    return _c("h2", [
+      _vm._v("Related Post "),
+      _c("i", { staticClass: "fa fa-thumbs-o-up" })
     ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "a",
+      { staticClass: "media-left", attrs: { href: "single_page.html" } },
+      [_c("img", { attrs: { src: "", alt: "" } })]
+    )
   },
   function() {
     var _vm = this
@@ -80815,63 +80775,7 @@ var render = function() {
       )
     ]),
     _vm._v(" "),
-    _c("section", { attrs: { id: "newsSection" } }, [
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-lg-12 col-md-12" }, [
-          _c(
-            "div",
-            { staticClass: "latest_newsarea", staticStyle: { height: "40px" } },
-            [
-              _c(
-                "span",
-                { staticStyle: { background: "#000", height: "40px" } },
-                [_vm._v("Latest News")]
-              ),
-              _vm._v(" "),
-              _c(
-                "ul",
-                { staticClass: "news_sticker", attrs: { id: "ticker01" } },
-                _vm._l(_vm.getargentPost, function(argent, index) {
-                  return index < 4
-                    ? _c(
-                        "li",
-                        { staticStyle: { "font-size": "15px" } },
-                        [
-                          _c(
-                            "router-link",
-                            { attrs: { to: "/post/" + argent.slug } },
-                            [
-                              _c("img", {
-                                attrs: {
-                                  src: "`upload/postimage/${argent.image}`",
-                                  alt: ""
-                                }
-                              }),
-                              _vm._v(
-                                _vm._s(
-                                  _vm._f("shortlength")(
-                                    argent.title,
-                                    90,
-                                    "......."
-                                  )
-                                )
-                              )
-                            ]
-                          )
-                        ],
-                        1
-                      )
-                    : _vm._e()
-                }),
-                0
-              ),
-              _vm._v(" "),
-              _vm._m(11)
-            ]
-          )
-        ])
-      ])
-    ])
+    _vm._m(11)
   ])
 }
 var staticRenderFns = [
@@ -81020,46 +80924,108 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      {
-        staticClass: "social_area",
-        staticStyle: { height: "40px", "padding-top": "3px" }
-      },
-      [
-        _c("ul", { staticClass: "social_nav" }, [
-          _c("li", { staticClass: "facebook" }, [
-            _c("a", { attrs: { href: "#" } })
-          ]),
-          _vm._v(" "),
-          _c("li", { staticClass: "twitter" }, [
-            _c("a", { attrs: { href: "#" } })
-          ]),
-          _vm._v(" "),
-          _c("li", { staticClass: "flickr" }, [
-            _c("a", { attrs: { href: "#" } })
-          ]),
-          _vm._v(" "),
-          _c("li", { staticClass: "pinterest" }, [
-            _c("a", { attrs: { href: "#" } })
-          ]),
-          _vm._v(" "),
-          _c("li", { staticClass: "googleplus" }, [
-            _c("a", { attrs: { href: "#" } })
-          ]),
-          _vm._v(" "),
-          _c("li", { staticClass: "vimeo" }, [
-            _c("a", { attrs: { href: "#" } })
-          ]),
-          _vm._v(" "),
-          _c("li", { staticClass: "youtube" }, [
-            _c("a", { attrs: { href: "#" } })
-          ]),
-          _vm._v(" "),
-          _c("li", { staticClass: "mail" }, [_c("a", { attrs: { href: "#" } })])
+    return _c("section", { attrs: { id: "newsSection" } }, [
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col-lg-12 col-md-12" }, [
+          _c(
+            "div",
+            { staticClass: "latest_newsarea", staticStyle: { height: "40px" } },
+            [
+              _c(
+                "span",
+                { staticStyle: { background: "#000", height: "40px" } },
+                [_vm._v("Latest News")]
+              ),
+              _vm._v(" "),
+              _c(
+                "ul",
+                { staticClass: "news_sticker", attrs: { id: "ticker01" } },
+                [
+                  _c("li", { staticStyle: { "font-size": "15px" } }, [
+                    _c("a", { attrs: { href: "#" } }, [
+                      _c("img", {
+                        attrs: { src: "images/news_thumbnail3.jpg", alt: "" }
+                      }),
+                      _vm._v("My First News Item")
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("li", { staticStyle: { "font-size": "15px" } }, [
+                    _c("a", { attrs: { href: "#" } }, [
+                      _c("img", {
+                        attrs: { src: "images/news_thumbnail3.jpg", alt: "" }
+                      }),
+                      _vm._v("My Second News Item")
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("li", { staticStyle: { "font-size": "15px" } }, [
+                    _c("a", { attrs: { href: "#" } }, [
+                      _c("img", {
+                        attrs: { src: "images/news_thumbnail3.jpg", alt: "" }
+                      }),
+                      _vm._v("My First News Item")
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("li", { staticStyle: { "font-size": "15px" } }, [
+                    _c("a", { attrs: { href: "#" } }, [
+                      _c("img", {
+                        attrs: { src: "images/news_thumbnail3.jpg", alt: "" }
+                      }),
+                      _vm._v("My Second News Item")
+                    ])
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "social_area",
+                  staticStyle: { height: "40px", "padding-top": "3px" }
+                },
+                [
+                  _c("ul", { staticClass: "social_nav" }, [
+                    _c("li", { staticClass: "facebook" }, [
+                      _c("a", { attrs: { href: "#" } })
+                    ]),
+                    _vm._v(" "),
+                    _c("li", { staticClass: "twitter" }, [
+                      _c("a", { attrs: { href: "#" } })
+                    ]),
+                    _vm._v(" "),
+                    _c("li", { staticClass: "flickr" }, [
+                      _c("a", { attrs: { href: "#" } })
+                    ]),
+                    _vm._v(" "),
+                    _c("li", { staticClass: "pinterest" }, [
+                      _c("a", { attrs: { href: "#" } })
+                    ]),
+                    _vm._v(" "),
+                    _c("li", { staticClass: "googleplus" }, [
+                      _c("a", { attrs: { href: "#" } })
+                    ]),
+                    _vm._v(" "),
+                    _c("li", { staticClass: "vimeo" }, [
+                      _c("a", { attrs: { href: "#" } })
+                    ]),
+                    _vm._v(" "),
+                    _c("li", { staticClass: "youtube" }, [
+                      _c("a", { attrs: { href: "#" } })
+                    ]),
+                    _vm._v(" "),
+                    _c("li", { staticClass: "mail" }, [
+                      _c("a", { attrs: { href: "#" } })
+                    ])
+                  ])
+                ]
+              )
+            ]
+          )
         ])
-      ]
-    )
+      ])
+    ])
   }
 ]
 render._withStripped = true
@@ -100321,7 +100287,9 @@ __webpack_require__.r(__webpack_exports__);
     puPost: [],
     sportsPost: [],
     gjPost: [],
-    pjPost: []
+    pjPost: [],
+    popularPost: [],
+    releatedPost: []
   },
   getters: {
     categoryList: function categoryList(state) {
@@ -100380,6 +100348,12 @@ __webpack_require__.r(__webpack_exports__);
     },
     pjPost: function pjPost(state) {
       return state.pjPost;
+    },
+    popularPost: function popularPost(state) {
+      return state.popularPost;
+    },
+    releatedPost: function releatedPost(state) {
+      return state.releatedPost;
     }
   },
   actions: {
@@ -100488,6 +100462,16 @@ __webpack_require__.r(__webpack_exports__);
       axios.get('/pjPost').then(function (response) {
         context.commit('pjPost', response.data.pjPosts);
       });
+    },
+    getpopularPost: function getpopularPost(context) {
+      axios.get('/popularPost').then(function (response) {
+        context.commit('popularPost', response.data.popularPosts);
+      });
+    },
+    getreleatedPost: function getreleatedPost(context) {
+      axios.get('/releatedPost').then(function (response) {
+        context.commit('releatedPost', response.data.releatedPosts);
+      });
     }
   },
   mutations: {
@@ -100553,6 +100537,12 @@ __webpack_require__.r(__webpack_exports__);
     },
     pjPost: function pjPost(state, responseData) {
       return state.pjPost = responseData;
+    },
+    popularPost: function popularPost(state, responseData) {
+      return state.popularPost = responseData;
+    },
+    releatedPost: function releatedPost(state, responseData) {
+      return state.releatedPost = responseData;
     }
   }
 });

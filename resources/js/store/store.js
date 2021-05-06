@@ -20,6 +20,8 @@ export default{
     sportsPost:[],
     gjPost:[],
     pjPost:[],
+    popularPost:[],
+    releatedPost:[],
    
   },
 
@@ -80,6 +82,12 @@ export default{
     },
     pjPost(state){
       return state.pjPost
+    },
+    popularPost(state){
+      return state.popularPost
+    },
+    releatedPost(state){
+      return state.releatedPost
     },
    
 
@@ -196,6 +204,16 @@ export default{
         context.commit('pjPost',response.data.pjPosts) 
       }) 
     },
+    getpopularPost(context){
+      axios.get('/popularPost').then((response)=>{
+        context.commit('popularPost',response.data.popularPosts) 
+      }) 
+    },
+    getreleatedPost(context){
+      axios.get('/releatedPost').then((response)=>{
+        context.commit('releatedPost',response.data.releatedPosts) 
+      }) 
+    },
   },
 
 
@@ -265,6 +283,12 @@ export default{
      },
      pjPost(state,responseData){
       return state.pjPost = responseData;
+     },
+     popularPost(state,responseData){
+      return state.popularPost = responseData;
+     },
+     releatedPost(state,responseData){
+      return state.releatedPost = responseData;
      },
 
   }

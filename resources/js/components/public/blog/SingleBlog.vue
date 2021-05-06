@@ -52,21 +52,12 @@
             <div class="related_post">
               <h2>Related Post <i class="fa fa-thumbs-o-up"></i></h2>
               <ul class="spost_nav wow fadeInDown animated">
-                <li>
+                <li v-for="(releated,index) in getreleatedPost" v-if="index<10">
                   <div class="media"> <a class="media-left" href="single_page.html"> <img src="" alt=""> </a>
-                    <div class="media-body"> <a class="catg_title" href="single_page.html"> Aliquam malesuada diam eget turpis varius</a> </div>
+                    <div class="media-body"> <a class="catg_title" href="single_page.html"> {{ releated.title }}</a> </div>
                   </div>
                 </li>
-                <li>
-                  <div class="media"> <a class="media-left" href="single_page.html"> <img src="" alt=""> </a>
-                    <div class="media-body"> <a class="catg_title" href="single_page.html"> Aliquam malesuada diam eget turpis varius</a> </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="media"> <a class="media-left" href="single_page.html"> <img src="" alt=""> </a>
-                    <div class="media-body"> <a class="catg_title" href="single_page.html"> Aliquam malesuada diam eget turpis varius</a> </div>
-                  </div>
-                </li>
+               
               </ul>
             </div>
           </div>
@@ -210,10 +201,10 @@ data(){
 	}
 },
 mounted(){
- this.$store.dispatch('getschoolCollege')
- this.$store.dispatch('getlatestPost')
+ this.$store.dispatch('getreleatedPost')
+ this.$store.dispatch('getpopularPost')
+  this.$store.dispatch('getlatestPost')
  
- this.$store.dispatch('getargentPost')
  
 },
 
@@ -221,8 +212,14 @@ computed:{
    getsinglePost(){
     return this.$store.getters.singlePost 
    },
-   getargentPost(){
-    return this.$store.getters.argentPost 
+   getreleatedPost(){
+    return this.$store.getters.releatedPost 
+   },
+   getreleatedPost(){
+    return this.$store.getters.releatedPost 
+   },
+   getpopularPost(){
+    return this.$store.getters.popularPost 
    },
 },
 
